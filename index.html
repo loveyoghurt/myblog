@@ -61,122 +61,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo命令及markdown语法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/19/hexo命令及markdown语法/" class="article-date">
-  <time datetime="2015-10-19T02:20:10.000Z" itemprop="datePublished">2015-10-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/19/hexo命令及markdown语法/">hexo命令及markdown语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。<br>Markdown</p>
-<p>hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种标记语言完成的。所以，我们先从Markdown说起。</p>
-<pre><code>什么是<span class="keyword">Markdown
-</span><span class="keyword">Markdown语法
-</span>例文
-</code></pre><p>你可以使用vim工具直接编辑md文件，也可以用记事本打开md文件编辑你的文章，也可以Markdown的编辑器编写，有很多在线的编辑器，何有不少客户端的编辑器，我是Mac系统，用的一个叫Mou的编辑器，还比较好使。Windows系统下，你可以自己找一下，应该也会有很好用的编辑器。<br>什么是Markdown</p>
-<p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯和亚伦·斯沃茨。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML文档”。 ——维基百科</p>
-<p>先简单介绍一下，Markdown的语法，具体怎么用，我相信大家一看例文就马上明白了。<br>Markdown语法</p>
-<p>1、分段： 两个回车</p>
-<p>2、换行 两个空格 + 回车</p>
-<p>3、标题 #~###### 井号的个数表示几级标题，即Markdown可以表示一级标题到六级标题</p>
-<p>4、引用 &gt;</p>
-<p>5、列表 *，+，-，1.，选其中之一，注意后面有个空格</p>
-<p>6、代码区块 四个空格开头</p>
-<p>7、链接 <a href="链接地址">文字</a></p>
-<p>8、图片 <img src="图片地址" alt="图片说明">，图片地址可以是本地路劲，也可以是网络地址</p>
-<p>9、强调 <strong>文字</strong>，<strong>文字</strong>，<em>文字</em>，<em>文字</em></p>
-<p>10、代码 <code>`，</code></p>
-<p>下面来看看例文，你就马上明白，怎么来使用这些符号来写好一篇自己的博文了。<br>例文</p>
-<p>在线编辑器例文：传送门</p>
-<p>Mou编辑器：下载地址</p>
-<p>你先试试，用Markdown怎么去些自己的文章，有了例子，还是很容易上手的。<br>hexo常用命令</p>
-<p>我们在前面的已经略微的接触了一些hexo的命令，如hexo new “my blog”，hexo server等。下面来介绍一下我们经常会用到的hexo命令</p>
-<p>1、新建</p>
-<p>hexo new “my blog”</p>
-<p>新建的文件在hexo/source/_posts/my-blog.md</p>
-<p>2、编译</p>
-<p>hexo generate</p>
-<p>一般部署上去的时候都需要编译一下，编译后，会出现一个public文件夹，将所有的md文件编译成html文件</p>
-<p>3、开启本地服务</p>
-<p>hexo server</p>
-<p>这个命令，我之前已经用过了，开启本地hexo服务用的</p>
-<p>4、部署</p>
-<p>hexo deploy</p>
-<p>部署到git上的时候，需要用这个命令，下一篇中，我们会使用到这个命令</p>
-<p>5、清除public</p>
-<p>hexo clean</p>
-<p>当source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</p>
-<p>以上这些都是我在使用过程中经常用到的一些hexo命令。最为详细、最为全面的说明文档当然还是在官网。请各位猛戳。<br>后记</p>
-<p>OK，下一篇介绍hexo这个系列的最后一篇文章《如何讲博客部署到git上》。</p>
-<p>大家如果有什么疑问，欢迎通过留言、微博等多种途径进行交流</p>
-<p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/19/hexo命令及markdown语法/" data-id="cifxbrc8400070wck8hg5rnp6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-搭建hexo发布环境" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/19/搭建hexo发布环境/" class="article-date">
-  <time datetime="2015-10-19T01:58:07.000Z" itemprop="datePublished">2015-10-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/19/搭建hexo发布环境/">搭建hexo发布环境</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>安装<a href="http://nodejs.org/dist/v0.10.22/node-v0.10.22-x86.msi" target="_blank" rel="external">Node.js</a></p>
-<p>安装<a href="https://github-cloud.s3.amazonaws.com/releases/23216272/35ef7916-6ba3-11e5-8696-2a5274e14713.exe?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20151019%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20151019T022145Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=10a4f0ab32c701f8cf83944c35274698e9754e101a1c5b3059b375398cada3f1&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3DGit-2.6.1-64-bit.exe&amp;response-content-type=application%2Foctet-stream" target="_blank" rel="external">Git</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/19/搭建hexo发布环境/" data-id="cifxbrc7y00030wckrz38ymxd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-忍者" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/15/忍者/" class="article-date">
@@ -203,7 +87,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/15/忍者/" data-id="cifxbrc8200060wckqtg1cznn" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/15/忍者/" data-id="cifxbv10d000540ckqn0zeepr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/about3/" data-id="cifxbrc88000a0wckxjdorcnf" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/about3/" data-id="cifxbv10h000840cka4ply5h6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/about/" data-id="cifxbrc7f00000wckzq7vl6no" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/about/" data-id="cifxbv0zp000040ckne9j1hoi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/backbone/" data-id="cifxbrc8600090wcklzz0ylm5" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/10/14/backbone/" data-id="cifxbv10f000740cknxzm4keq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/我的日记2/" data-id="cifxbrc8000040wckq8kvqs79" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/我的日记2/" data-id="cifxbv10b000340ckijx7v9d8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/我的日记/" data-id="cifxbrc8100050wckbfwzlqa8" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/我的日记/" data-id="cifxbv10c000440ckq4g3dgos" class="article-share-link">Share</a>
       
       
     </footer>
@@ -429,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/hello-world/" data-id="cifxbrc8500080wckedz4xxr5" class="article-share-link">Share</a>
+      <a data-url="http://loveyoghurt.github.com/stylish/2015/08/25/hello-world/" data-id="cifxbv10e000640ck35rj2imi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +338,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -466,14 +350,6 @@
       <ul>
         
           <li>
-            <a href="/2015/10/19/hexo命令及markdown语法/">hexo命令及markdown语法</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/19/搭建hexo发布环境/">搭建hexo发布环境</a>
-          </li>
-        
-          <li>
             <a href="/2015/10/15/忍者/">忍者</a>
           </li>
         
@@ -483,6 +359,14 @@
         
           <li>
             <a href="/2015/10/14/about/">about</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/14/backbone/">backbone</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/25/我的日记2/">我的日记2</a>
           </li>
         
       </ul>

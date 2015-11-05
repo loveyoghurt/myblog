@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>position属性：absolute和relative的区别ddddddd | 北京森林</title>
+  <meta name="author" content="monster">
+  
+  <meta name="description" content="定位标签：position
+包含属性：relative（相对）　　　　　absolute（绝对）
+
+1.position:relative; 如果对一个元素进行相对定位，首先它将出现在它所在的位置上。然后通过设置垂直或水平位置，让这个元素”相对于”它的原始起点进行移动。（再一点，相对定位时，无论是否">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="position属性：absolute和relative的区别ddddddd"/>
+  <meta property="og:site_name" content="北京森林"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="北京森林" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">北京森林</a></h1>
+  <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-03T07:25:44.000Z"><a href="/2015/11/03/position属性：absolute和relative的区别/">2015-11-03</a></time>
+      
+      
+  
+    <h1 class="title">position属性：absolute和relative的区别ddddddd</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>定位标签：position</p>
+<p>包含属性：relative（相对）<br>　　　　　absolute（绝对）</p>
+<hr>
+<p>1.position:relative; 如果对一个元素进行相对定位，首先它将出现在它所在的位置上。然后通过设置垂直或水平位置，让这个元素”相对于”它的原始起点进行移动。（再一点，相对定位时，无论是否进行移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其他框）</p>
+<p>相对定位：relative 没有脱离正常的文档流，被设置元素相对于其原始位置而进行定位，其原始占位信息仍存在</p>
+<p>2.position:absolute; 表示绝对定位，位置将依据浏览器左上角开始计算。 绝对定位使元素脱离文档流，因此不占据空间。普通文档流中元素的布局就像绝对定位的元素不存在时一样。（因为绝对定位的框与文档流无关，所以它们可以覆盖页面上的其他元素并可以通过z-index来控制它层级次序。z-index的值越高，它显示的越在上层。）</p>
+<p>绝对定位：ablution 脱离了文档流与浮动模型，独立于其他对象而存在，没有占位。</p>
+<p>3.父容器使用相对定位，子元素使用绝对定位后，这样子元素的位置不再相对于浏览器左上角，而是相对于父窗口左上角</p>
+<p>下面具体案例说明：</p>
+<p>1。若c嵌套在b中，且b,c均是相对定位，则c的相对定位是相对于b而言的，b保留占位信息，且b中保留c的占位信息。</p>
+<p>2。若c嵌套在b中，b进行绝对定位，c进行相对定位，则b脱离浮动，没有占位信息，而c相对b定位，并在b中发生占位。</p>
+<p>3。若a,b,c,d并列，且都嵌套在id为group的div中，且：</p>
+<p>#group{potision:relative;height:200px;width:4oopx;}         #b{potision:absolute;left:20px;top:20px;}<br>在这种方式下，父级元素是相对定位，但没有设定left,top的值，可以将其看做是浮动对象，而b是绝对定位，因而不占位，但由于父级元素是相对定位，所以这里的绝对定位变成了相对于父级元素的绝对定位，而不是相对于浏览器的。<br>例如：</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"main"</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"a"</span>&gt;aaaaaaaaaa&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"b"</span>&gt;bbbbbbbb&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>（1）若给a设置position：absolute，会使a脱离正常的文档流，a会不占位，即b不再基于a，而是直接从parent开始定位。（b位置和没有a一样）。</p>
+<p>若给a设置position:relative，（没有脱离文档流）则a会占位，a相对于他的原始位置进行定位，看上去是浮在main上的，而b会按原来的方式进行排列，不受a的影响。（b的位置和a没有position属性时一样）<br>（2）若给main设置position：relative/absolute；则里面的a或b的绝对定位或相对定位都是相对于父级元素main的，之后后再按照相对或绝对的方法进行定位<br>注意：若父级元素没有设定有效的宽高值，则b是相对于group中最后一个元素的右上角进行绝对定位父级元素要设置宽高！！！！！！</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/css-position/">-css -position</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/stylish/2015/11/03/position属性：absolute和relative的区别/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:loveyoghurt.github.com/stylish">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/css-position/" style="font-size: 10px;">-css -position</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 monster
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

@@ -1,91 +1,114 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>北京森林</title>
+  <meta name="author" content="monster">
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="北京森林">
-<meta property="og:url" content="http://loveyoghurt.github.com/index.html">
-<meta property="og:site_name" content="北京森林">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="北京森林">
-<meta name="twitter:description">
+
   
-    <link rel="alternative" href="/atom.xml" title="北京森林" type="application/atom+xml">
+  <meta property="og:site_name" content="北京森林"/>
+
   
+    <meta property="og:image" content="undefined"/>
   
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/stylish/css/style.css" type="text/css">
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="北京森林" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
 
 </head>
+
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">北京森林</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">秩秩斯干，幽幽南山</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://loveyoghurt.github.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">北京森林</a></h1>
+  <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
   
-    <article id="post-async-非阻塞加载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/11/02/async-非阻塞加载/" class="article-date">
-  <time datetime="2015-11-02T06:36:09.000Z" itemprop="datePublished">2015-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-03T07:25:44.000Z"><a href="/2015/11/03/position属性：absolute和relative的区别/">2015-11-03</a></time>
+      
+      
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/11/02/async-非阻塞加载/">async 非阻塞加载</a>
-    </h1>
+    <h1 class="title"><a href="/2015/11/03/position属性：absolute和relative的区别/">position属性：absolute和relative的区别ddddddd</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
+      
+        <p>定位标签：position</p>
+<p>包含属性：relative（相对）<br>　　　　　absolute（绝对）</p>
+<hr>
+<p>1.position:relative; 如果对一个元素进行相对定位，首先它将出现在它所在的位置上。然后通过设置垂直或水平位置，让这个元素”相对于”它的原始起点进行移动。（再一点，相对定位时，无论是否进行移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其他框）</p>
+<p>相对定位：relative 没有脱离正常的文档流，被设置元素相对于其原始位置而进行定位，其原始占位信息仍存在</p>
+<p>2.position:absolute; 表示绝对定位，位置将依据浏览器左上角开始计算。 绝对定位使元素脱离文档流，因此不占据空间。普通文档流中元素的布局就像绝对定位的元素不存在时一样。（因为绝对定位的框与文档流无关，所以它们可以覆盖页面上的其他元素并可以通过z-index来控制它层级次序。z-index的值越高，它显示的越在上层。）</p>
+<p>绝对定位：ablution 脱离了文档流与浮动模型，独立于其他对象而存在，没有占位。</p>
+<p>3.父容器使用相对定位，子元素使用绝对定位后，这样子元素的位置不再相对于浏览器左上角，而是相对于父窗口左上角</p>
+<p>下面具体案例说明：</p>
+<p>1。若c嵌套在b中，且b,c均是相对定位，则c的相对定位是相对于b而言的，b保留占位信息，且b中保留c的占位信息。</p>
+<p>2。若c嵌套在b中，b进行绝对定位，c进行相对定位，则b脱离浮动，没有占位信息，而c相对b定位，并在b中发生占位。</p>
+<p>3。若a,b,c,d并列，且都嵌套在id为group的div中，且：</p>
+<p>#group{potision:relative;height:200px;width:4oopx;}         #b{potision:absolute;left:20px;top:20px;}<br>在这种方式下，父级元素是相对定位，但没有设定left,top的值，可以将其看做是浮动对象，而b是绝对定位，因而不占位，但由于父级元素是相对定位，所以这里的绝对定位变成了相对于父级元素的绝对定位，而不是相对于浏览器的。<br>例如：</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"main"</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"a"</span>&gt;aaaaaaaaaa&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"b"</span>&gt;bbbbbbbb&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>（1）若给a设置position：absolute，会使a脱离正常的文档流，a会不占位，即b不再基于a，而是直接从parent开始定位。（b位置和没有a一样）。</p>
+<p>若给a设置position:relative，（没有脱离文档流）则a会占位，a相对于他的原始位置进行定位，看上去是浮在main上的，而b会按原来的方式进行排列，不受a的影响。（b的位置和a没有position属性时一样）<br>（2）若给main设置position：relative/absolute；则里面的a或b的绝对定位或相对定位都是相对于父级元素main的，之后后再按照相对或绝对的方法进行定位<br>注意：若父级元素没有设定有效的宽高值，则b是相对于group中最后一个元素的右上角进行绝对定位父级元素要设置宽高！！！！！！</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-02T06:36:09.000Z"><a href="/2015/11/02/async-非阻塞加载/">2015-11-02</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/02/async-非阻塞加载/">async 非阻塞加载</a></h1>
+  
+
+    </header>
+    <div class="entry">
       
         <p>h5里script标签拥有async属性，给script标签加上async，则js文件的加载和解析会和dom异步并行进行，而非阻塞后面的dom渲染。</p>
 <pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/javascripts/tests.js"</span> <span class="attribute">async</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
@@ -93,77 +116,67 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/11/02/async-非阻塞加载/" data-id="cighr89740000o4ckrllpp6v3" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/stylish/tags/async-js加载/">async js加载</a></li></ul>
-
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
+
+
+  <article class="post">
   
-    <article id="post-webstorm二三则" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/10/21/webstorm二三则/" class="article-date">
-  <time datetime="2015-10-21T06:13:59.000Z" itemprop="datePublished">2015-10-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-21T06:13:59.000Z"><a href="/2015/10/21/webstorm二三则/">2015-10-21</a></time>
+      
+      
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/10/21/webstorm二三则/">webstorm二三则</a>
-    </h1>
+    <h1 class="title"><a href="/2015/10/21/webstorm二三则/">webstorm二三则</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
       
         <p>同时显示多个项目目录<br>File -&gt; settings -&gt; Directories -&gt; Add Content Root 中添加你当前的工程目录。</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/10/21/webstorm二三则/" data-id="cighr897q0008o4ckegpecf0b" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
+
+
+  <article class="post">
   
-    <article id="post-hexo命令及markdown语法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/10/19/hexo命令及markdown语法/" class="article-date">
-  <time datetime="2015-10-19T02:20:10.000Z" itemprop="datePublished">2015-10-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-19T02:20:10.000Z"><a href="/2015/10/19/hexo命令及markdown语法/">2015-10-19</a></time>
+      
+      
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/10/19/hexo命令及markdown语法/">hexo命令及markdown语法</a>
-    </h1>
+    <h1 class="title"><a href="/2015/10/19/hexo命令及markdown语法/">hexo命令及markdown语法</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
       
         <p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。<br>Markdown</p>
 <p>hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种标记语言完成的。所以，我们先从Markdown说起。</p>
@@ -204,185 +217,101 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/10/19/hexo命令及markdown语法/" data-id="cighr897s0009o4ckz7p700yg" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
+
+
+  <article class="post">
   
-    <article id="post-搭建hexo发布环境" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/10/19/搭建hexo发布环境/" class="article-date">
-  <time datetime="2015-10-19T01:58:07.000Z" itemprop="datePublished">2015-10-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-19T01:58:07.000Z"><a href="/2015/10/19/搭建hexo发布环境/">2015-10-19</a></time>
+      
+      
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/10/19/搭建hexo发布环境/">搭建hexo发布环境</a>
-    </h1>
+    <h1 class="title"><a href="/2015/10/19/搭建hexo发布环境/">搭建hexo发布环境</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
       
         <p>准备<br>安装<a href="http://nodejs.org/dist/v0.10.22/node-v0.10.22-x86.msi" target="_blank" rel="external">Node.js</a></p>
 <p>安装<a href="https://github-cloud.s3.amazonaws.com/releases/23216272/35ef7916-6ba3-11e5-8696-2a5274e14713.exe?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20151019%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20151019T022145Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=10a4f0ab32c701f8cf83944c35274698e9754e101a1c5b3059b375398cada3f1&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3DGit-2.6.1-64-bit.exe&amp;response-content-type=application%2Foctet-stream" target="_blank" rel="external">Git</a></p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/10/19/搭建hexo发布环境/" data-id="cighr897m0005o4ckc173np4u" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
+
+
+  <article class="post">
   
-    <article id="post-backbone" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/10/14/backbone/" class="article-date">
-  <time datetime="2015-10-14T07:16:21.000Z" itemprop="datePublished">2015-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-14T07:16:21.000Z"><a href="/2015/10/14/backbone/">2015-10-14</a></time>
+      
+      
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/10/14/backbone/">backbone</a>
-    </h1>
+    <h1 class="title"><a href="/2015/10/14/backbone/">backbone</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
       
         <p>backbone框架使用</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/10/14/backbone/" data-id="cighr897u000bo4ckm5cyeuxn" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
-  
-    <article id="private-我的日记2" class="article article-type-private" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/08/25/我的日记2/" class="article-date">
-  <time datetime="2015-08-25T08:32:05.000Z" itemprop="datePublished">2015-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/08/25/我的日记2/">我的日记2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/08/25/我的日记2/" data-id="cighr897n0006o4ck4gm9tc96" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
 
+  <article class="post">
   
-    <article id="test-我的日记" class="article article-type-test" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/08/25/我的日记/" class="article-date">
-  <time datetime="2015-08-25T08:24:09.000Z" itemprop="datePublished">2015-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/08/25/我的日记/">我的日记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+  <div class="post-content">
+    <header>
       
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/08/25/我的日记/" data-id="cighr897p0007o4ckjmt5c0zl" class="article-share-link">Share</a>
+        <div class="icon"></div>
+        <time datetime="2015-08-25T07:50:10.000Z"><a href="/2015/08/25/hello-world/">2015-08-25</a></time>
       
       
-    </footer>
-  </div>
   
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/stylish/2015/08/25/hello-world/" class="article-date">
-  <time datetime="2015-08-25T07:50:10.000Z" itemprop="datePublished">2015-08-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/stylish/2015/08/25/hello-world/">Hello World</a>
-    </h1>
+    <h1 class="title"><a href="/2015/08/25/hello-world/">Hello World</a></h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+    </header>
+    <div class="entry">
       
         <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
@@ -396,113 +325,66 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loveyoghurt.github.com/2015/08/25/hello-world/" data-id="cighr897t000ao4cktijdjsb1" class="article-share-link">Share</a>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
   </div>
-  
 </article>
 
 
+
+
+
+<nav id="pagination">
   
   
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/stylish/tags/async-js加载/">async js加载</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:loveyoghurt.github.com/stylish">
+  </form>
+</div>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/stylish/tags/async-js加载/" style="font-size: 10px;">async js加载</a>
-    </div>
-  </div>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/stylish/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/stylish/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/stylish/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li></ul>
-    </div>
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/css-position/" style="font-size: 10px;">-css -position</a>
   </div>
+</div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/stylish/2015/11/02/async-非阻塞加载/">async 非阻塞加载</a>
-          </li>
-        
-          <li>
-            <a href="/stylish/2015/10/21/webstorm二三则/">webstorm二三则</a>
-          </li>
-        
-          <li>
-            <a href="/stylish/2015/10/19/hexo命令及markdown语法/">hexo命令及markdown语法</a>
-          </li>
-        
-          <li>
-            <a href="/stylish/2015/10/19/搭建hexo发布环境/">搭建hexo发布环境</a>
-          </li>
-        
-          <li>
-            <a href="/stylish/2015/10/14/backbone/">backbone</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 monster<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    <div class="clearfix"></div>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+  <footer id="footer" class="inner"><div class="alignleft">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+  &copy; 2015 monster
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/stylish/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/stylish/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
 
-<script src="/stylish/js/script.js" type="text/javascript"></script>
 
-  </div>
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
 </body>
 </html>

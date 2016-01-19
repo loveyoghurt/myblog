@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同 | 北京森林</title>
+  <meta name="author" content="monster">
+  
+  <meta name="description" content="最近在iteye的新闻中看到jQuery已经更新到了1.6.1。和之前版本的最大变化是增加了.prop方法。但是.prop()方法和.attr()方法，单从字面上很难区分。在汉语中properties和attributes都有表示“属性”的意思。下面根据这篇博文，简要翻译了.prop()和.attr">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同"/>
+  <meta property="og:site_name" content="北京森林"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="北京森林" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">北京森林</a></h1>
+  <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-01-19T01:14:28.000Z"><a href="/2016/01/19/jquery对checkbox的各种操作/">2016-01-19</a></time>
+      
+      
+  
+    <h1 class="title">jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同</h1>
+  
+
+    </header>
+    <div class="entry" id="entry">
+      
+        <p>   最近在iteye的新闻中看到jQuery已经更新到了1.6.1。和之前版本的最大变化是增加了.prop方法。但是.prop()方法和.attr()方法，单从字面上很难区分。在汉语中properties和attributes都有表示“属性”的意思。<br>下面根据这篇博文，简要翻译了.prop()和.attr()的用法：</p>
+<p>1、从1.5.2升级到1.6.1</p>
+<p>通过介绍新方法.prop()以及.attr()方法的改变，jQuery1.6.1引起了一场关于attributes和properties之间有何区别和联系的激烈讨论。同时，1.6.1也解决了一些向后兼容性问题。当从1.5.2升级到1.6.1时，你不必修改任何attribute代码。</p>
+<p>下面是关于jQuery1.6和1.6.1中Attributes模块变化的描述，以及.attr()方法和.prop()方法的首选使用。然而，正如前面所述，jQuery1.6.1允许你使用.attr()方法就像以前它被使用在所有的情况中一样。</p>
+<p>2、发生了什么变化</p>
+<p>Attributes模块的变化是移除了attributes和properties之间模棱两可的东西，但是在jQuery社区中引起了一些混乱，因为在1.6之前的所有版本中都使用一个方法(.attr())来处理attributes和properties。但是老的.attr()方法有一些bug，很难维护。jQuery1.6.1对Attributes模块进行了更新，并且修复了几个bug。</p>
+<p>特别提到的是，boolean attributes，比如：checked,selected,readonly和disabled在1.6.1中和1.6之前的处理相同。这意味着下面的代码：</p>
+<p>Js代码  收藏代码</p>
+<pre><code>$<span class="params">(“:checkbox”)</span>.attr<span class="params">(“checked”, <span class="literal">true</span>)</span>;  
+$<span class="params">(“option”)</span>.attr<span class="params">(“selected”, <span class="literal">true</span>)</span>;  
+$<span class="params">(“input”)</span>.attr<span class="params">(“readonly”, <span class="literal">true</span>)</span>;  
+$<span class="params">(“input”)</span>.attr<span class="params">(“disabled”, <span class="literal">true</span>)</span>;  
+</code></pre><p> 甚至是这样的代码：</p>
+<p>Js代码  收藏代码</p>
+<pre><code><span class="keyword">if</span> <span class="params">( $<span class="params">(“:checkbox”)</span>.attr<span class="params">(“checked”)</span> )</span> { <span class="comment">/* Do something */</span> }  
+</code></pre><p>在1.6.1中没有必要为了保持之前期望的运行结果而发生任何改变。</p>
+<p>为了让jQuery1.6中的.attr()方法的变化被理解的清楚些，下面是一些使用.attr()的例子，虽然在jQuery之前的版本中能正常工作，但是现在必须使用.prop（）方法代替：</p>
+<p>首先，window或document中使用.attr()方法在jQuery1.6中不能正常运行，因为window和document中不能有attributes。它们包含properties(比如：location或readyState)，必须使用.prop()方法操作或简单地使用javascript原生的方法。在jQuery1.6.1中，window和document中使用.attr()将被自动转成使用.prop，而不是抛出一个错误。</p>
+<p>其次，checked,selected和前面提到的其它boolean attributes，因为这些attributes和其相应的properties之间的特殊关系而被特殊对待。基本上，一个attribute就是以下html中你看到的：</p>
+<p>Js代码  收藏代码</p>
+<pre><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">”checkbox”</span> <span class="attribute">checked</span>=<span class="value">”checked”</span>&gt;</span>  
+</code></pre><p>boolean attributes，比如：checked，仅被设置成默认值或初始值。在一个checkbox的元素中，checked attributes在页面加载的时候就被设置，而不管checkbox元素是否被选中。</p>
+<p>properties就是浏览器用来记录当前值的东西。正常情况下，properties反映它们相应的attributes(如果存在的话)。但这并不是boolean attriubutes的情况。当用户点击一个checkbox元素或选中一个select元素的一个option时，boolean properties保持最新。但相应的boolean attributes是不一样的，正如上面所述，它们仅被浏览器用来保存初始值。</p>
+<p>Js代码  收藏代码</p>
+<pre><code><span class="variable">$(</span>“<span class="symbol">:checkbox</span>”).get(<span class="number">0</span>).checked = <span class="keyword">true</span>;  
+<span class="regexp">//</span> <span class="constant">Is </span>the same as <span class="variable">$(</span><span class="string">":checkbox:first"</span>).prop(“checked”, <span class="keyword">true</span>);  
+</code></pre><p>在jQuery1.6中，如果使用下面的方法设置checked：<br>``$(“:checkbox”).attr(“checked”, true);  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-striped table-bordered table-hover"</span> <span class="attribute">id</span>=<span class="value">"couponsList"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"checkAll"</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影厅名称<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影厅类型<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>制式<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影票/座位结算价<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tbody</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">	 $(<span class="string">'#checkAll'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($(<span class="keyword">this</span>).is(<span class="string">':checked'</span>))&#123;</span><br><span class="line">                $(<span class="string">'table input[type="checkbox"]'</span>).prop(<span class="string">'checked'</span>, <span class="string">'true'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                $(<span class="string">'table input[type="checkbox"]'</span>).removeAttr(<span class="string">'checked'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>将不会检查checkbox元素，因为它是需要被设置的property，但是你所有的设置都是初始值。</p>
+<p>然而，曾经jQuery1.6被释放出来的时候，jQuery团队明白当浏览器仅关心页面加载时，设置一些值不是特别的有用。所以，为了保持向后兼容性和.attr()方法的有用性，我们可以继续在jQuery1.6.1中使用.attr()方法取得和设置这些boolean attributes。</p>
+<p>最普通的attributes是checked,selected,disabled和readOnly，但下面是jQuery1.6.1支持的使用.attr()动态地取得和设置boolean attributes/properties的完整列表：</p>
+<p>Js代码  收藏代码</p>
+<pre><code><span class="label">autofocus</span>, autoplay, async, checked, controls, defer, disabled,  
+<span class="label">hidden</span>, loop, <span class="keyword">multiple, </span>open, <span class="preprocessor">readonly</span>, required, scoped, <span class="keyword">selected </span> 
+</code></pre><p>（译者注：大部分都是html5新增的属性）</p>
+<p>还是建议使用.prop()方法来设置这些boolean attributes/properties，即使这些用例没有转换成使用.prop()方法，但是你的代码仍然可以在jQuery1.6.1中正常运行。</p>
+<p>下面是一些attributes和properties的列表，正常情况下，应该使用其对应的方法(见下面的列表)来取得和设置它们。下面的是首用法，但是.attr()方法可以运行在所有的attributes情况下。</p>
+<p>注意：一些DOM元素的properties也被列在下面，但是仅运行在新的.prop()方法中<br><img src="p1.jpg" alt=""></p>
+<p><em>例如: window.location<br>*</em>如果需要在(if needed over) .width()</p>
+<p>.attr()和.prop()都不应该被用来取值/设值。使用.val()方法代替(即使使用.attr(“value”,”somevalue”) 可以继续运行，就像1.6之前做的那样)</p>
+<p>3、首选用法的概述</p>
+<p>.prop()方法应该被用来处理boolean attributes/properties以及在html(比如：window.location)中不存在的properties。其他所有的attributes(在html中你看到的那些)可以而且应该继续使用.attr()方法来进行操作。</p>
+<p>上面的概述已经描述的够清楚了，我也没有必要再总结了。</p>
+<p>转帖地址：<a href="http://hxq0506.iteye.com/blog/1046334" target="_blank" rel="external">http://hxq0506.iteye.com/blog/1046334</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/jquery/">jquery</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/2016/01/19/jquery对checkbox的各种操作/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:loveyoghurt.github.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 15px;">position</a> <a href="/tags/webstorm/" style="font-size: 15px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/async-js加载/">-async -js加载</a><small>1</small></li>
+  
+    <li><a href="/tags/cookie/">cookie</a><small>1</small></li>
+  
+    <li><a href="/tags/css/">css</a><small>3</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
+  
+    <li><a href="/tags/linux/">linux</a><small>3</small></li>
+  
+    <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>2</small></li>
+  
+    <li><a href="/tags/npm/">npm</a><small>1</small></li>
+  
+    <li><a href="/tags/php/">php</a><small>1</small></li>
+  
+    <li><a href="/tags/position/">position</a><small>2</small></li>
+  
+    <li><a href="/tags/webstorm/">webstorm</a><small>2</small></li>
+  
+    <li><a href="/tags/域名/">域名</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/01/19/jquery对checkbox的各种操作/">jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同</a>
+      </li>
+    
+      <li>
+        <a href="/2016/01/18/bootstrap-datetimepicker弹出位置不对的解决方法/">bootstrap-datetimepicker弹出位置不对的解决方法</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/22/npm常用命令/">&#39;npm常用命令&#39;</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/18/php清除cookie的方法/">&#39;php清除cookie的方法&#39;</a>
+      </li>
+    
+      <li>
+        <a href="/2015/11/24/AWS服务器一年免费使用-冲突-酸奶/">AWS使用记录</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 monster
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

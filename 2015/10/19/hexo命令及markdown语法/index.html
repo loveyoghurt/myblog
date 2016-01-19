@@ -59,7 +59,7 @@ hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种�
   
 
     </header>
-    <div class="entry">
+    <div class="entry" id="entry">
       
         <p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。<br>Markdown</p>
 <p>hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种标记语言完成的。所以，我们先从Markdown说起。</p>
@@ -76,6 +76,7 @@ hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种�
 <p>8、图片 ![图片说明](图片地址)，图片地址可以是本地路劲，也可以是网络地址<br><img src="!--￼0--&gt;jay.png" alt="hello"></p>
 <p>9、强调 **文字**，__文字__，或_文字_，*文字*</p>
 <p>10、代码 ```，``</p>
+<p>11、展示html代码   ```html<br>  (代码部分……)<br>  ```</p>
 <p>hexo常用命令</p>
 <p>我们在前面的已经略微的接触了一些hexo的命令，如hexo new “my blog”，hexo server等。下面来介绍一下我们经常会用到的hexo命令</p>
 <p>1、新建</p>
@@ -97,6 +98,7 @@ hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种�
 <p>OK，下一篇介绍hexo这个系列的最后一篇文章《如何讲博客部署到git上》。</p>
 <p>大家如果有什么疑问，欢迎通过留言、微博等多种途径进行交流</p>
 <p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。</p>
+<p><a href="http://www.tuicool.com/articles/Nnuyu2A" target="_blank" rel="external">hexo基本用法</a><br><a href="http://segmentfault.com/q/1010000002777869" target="_blank" rel="external">hexo 文章中的图片路径问题</a><br><a href="http://www.tuicool.com/articles/7rIbuen" target="_blank" rel="external">为hexo添加多种图片样式</a></p>
 
       
     </div>
@@ -104,6 +106,11 @@ hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种�
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/hexo/">hexo</a>, <a href="/tags/markdown/">markdown</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -164,20 +171,88 @@ hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种�
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/css-position/" style="font-size: 10px;">-css -position</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 15px;">position</a> <a href="/tags/webstorm/" style="font-size: 15px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a>
   </div>
 </div>
 
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/async-js加载/">-async -js加载</a><small>1</small></li>
+  
+    <li><a href="/tags/cookie/">cookie</a><small>1</small></li>
+  
+    <li><a href="/tags/css/">css</a><small>3</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
+  
+    <li><a href="/tags/linux/">linux</a><small>3</small></li>
+  
+    <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>2</small></li>
+  
+    <li><a href="/tags/npm/">npm</a><small>1</small></li>
+  
+    <li><a href="/tags/php/">php</a><small>1</small></li>
+  
+    <li><a href="/tags/position/">position</a><small>2</small></li>
+  
+    <li><a href="/tags/webstorm/">webstorm</a><small>2</small></li>
+  
+    <li><a href="/tags/域名/">域名</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/01/19/jquery对checkbox的各种操作/">jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同</a>
+      </li>
+    
+      <li>
+        <a href="/2016/01/18/bootstrap-datetimepicker弹出位置不对的解决方法/">bootstrap-datetimepicker弹出位置不对的解决方法</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/22/npm常用命令/">&#39;npm常用命令&#39;</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/18/php清除cookie的方法/">&#39;php清除cookie的方法&#39;</a>
+      </li>
+    
+      <li>
+        <a href="/2015/11/24/AWS服务器一年免费使用-冲突-酸奶/">AWS使用记录</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
 </aside>
     <div class="clearfix"></div>
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2015 monster
+  &copy; 2016 monster
   
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="/js/jquery.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 

@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>backbone | 北京森林</title>
+  <title>ssh | 北京森林</title>
   <meta name="author" content="monster">
   
-  <meta name="description" content="backbone框架使用">
+  <meta name="description" content="以前的github key悄然失踪了，于是重新生成了一个。然在本地的 .ssh目录里还存在其它账号的key，这是执行 ssh git@github.com连接github，会提示Permission denied (publickey).  为了看到错误信息，执行 ssh -T -v git@git">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="backbone"/>
+  <meta property="og:title" content="ssh"/>
   <meta property="og:site_name" content="北京森林"/>
 
   
@@ -50,17 +50,17 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-14T07:16:21.000Z"><a href="/2015/10/14/backbone/">2015-10-14</a></time>
+        <time datetime="2016-01-29T10:14:50.000Z"><a href="/2016/01/29/ssh/">2016-01-29</a></time>
       
       
   
-    <h1 class="title">backbone</h1>
+    <h1 class="title">ssh</h1>
   
 
     </header>
     <div class="entry" id="entry">
       
-        <p>backbone框架使用</p>
+        <p>以前的github key悄然失踪了，于是重新生成了一个。然在本地的 .ssh目录里还存在其它账号的key，这是执行 <code>ssh git@github.com</code>连接github，会提示<br>Permission denied (publickey).  为了看到错误信息，执行 <code>ssh -T -v git@github.com</code>   这时发现，ssh尝试连接时只寻找了id_rsa这个key。这说明，ssh并没有把新生成的key添加到自己的key列表里。所以只要添加进来：先执行  eval <code>ssh-agent</code>  （是～键上的那个`） 再执行 ssh-add ~/.ssh/rsa成功。 ssh-add -l 可以看到新加的rsa了。 再执行ssh@github.com，成功连接到github！</p>
 
       
     </div>
@@ -68,6 +68,11 @@
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/github/">github</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -108,7 +113,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://loveyoghurt.github.com/2015/10/14/backbone/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/2016/01/29/ssh/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>

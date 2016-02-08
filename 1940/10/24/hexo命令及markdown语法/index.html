@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[转]npm常用命令 | 北京印象</title>
+  <title>hexo命令及markdown语法 | 北京印象</title>
   <meta name="author" content="monster">
   
-  <meta name="description" content="npm install 安装nodejs的依赖包例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6npm install  -g  将包安装到全局环境中
-但是代码中，直接通">
+  <meta name="description" content="到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。这篇我们要介绍两部分内容，Markdown与hexo的常用命令。Markdown
+hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种标记语言完成的。所以，我们先从Markdown说">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="[转]npm常用命令"/>
+  <meta property="og:title" content="hexo命令及markdown语法"/>
   <meta property="og:site_name" content="北京印象"/>
 
   
@@ -51,29 +51,54 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-19T07:00:39.000Z"><a href="/2015/11/19/转-npm常用命令-冲突-酸奶/">2015-11-19</a></time>
+        <time datetime="1940-10-24T02:26:18.955Z"><a href="/1940/10/24/hexo命令及markdown语法/">1940-10-24</a></time>
       
       
   
-    <h1 class="title">[转]npm常用命令</h1>
+    <h1 class="title">hexo命令及markdown语法</h1>
   
 
     </header>
     <div class="entry" id="entry">
       
-        <p> npm install <name>安装nodejs的依赖包<br>例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6<br>npm install <name> -g  将包安装到全局环境中</name></name></p>
-<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
-<p>npm install <name> –save  安装的同时，将信息写入package.json中</name></p>
-<p>项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包</p>
-<p>这样代码提交到github时，就不用提交node_modules这个文件夹了。</p>
-<p>npm init  会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
-<p>npm remove <name>移除</name></p>
-<p>npm update <name>更新</name></p>
-<p>npm ls 列出当前安装的了所有包</p>
-<p>npm root 查看当前包的安装路径</p>
-<p>npm root -g  查看全局的包的安装路径</p>
-<p>npm help  帮助，如果要单独查看install命令的帮助，可以使用的npm help install</p>
-<p>帮助文档：<a href="https://npmjs.org/doc/" target="_blank" rel="external">https://npmjs.org/doc/</a> </p>
+        <p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。<br>Markdown</p>
+<p>hexo是使用Markdown编辑文章的，我写的这些文章也都是用这种标记语言完成的。所以，我们先从Markdown说起。</p>
+<p>   ·什么是Markdown<br>   ·Markdown语法<br>   ·例文</p>
+<h4 id="什么是Markdown">什么是Markdown</h4><p>Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯和亚伦·斯沃茨。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML文档”。 ——维基百科</p>
+<p>  Markdown语法</p>
+<p>1、分段： 两个回车</p>
+<p>2、换行 两个空格 + 回车</p>
+<p>3、标题 # 井号的个数表示几级标题，即Markdown可以表示一级标题到六级标题。如：# 这是一级标题(注意有空格)</p>
+<p>4、引用 &gt;</p>
+<p>5、列表 *，+，-，1.，选其中之一，注意后面有个空格</p>
+<p>6、代码区块 四个空格开头</p>
+<p>7、链接 [文字](链接地址)</p>
+<p>8、图片 ![图片说明](图片地址)，图片地址可以是本地路劲，也可以是网络地址<br><img src="!--￼0--&gt;jay.png" alt="hello"></p>
+<p>9、强调 **文字**，__文字__，或_文字_，*文字*</p>
+<p>10、代码 ```，``</p>
+<p>11、展示html代码   ```html<br>  (代码部分……)<br>  ```</p>
+<p>hexo常用命令</p>
+<p>我们在前面的已经略微的接触了一些hexo的命令，如hexo new “my blog”，hexo server等。下面来介绍一下我们经常会用到的hexo命令</p>
+<p>1、新建</p>
+<p><code>hexo new &quot;my blog&quot;</code></p>
+<p>新建的文件在hexo/source/_posts/my-blog.md</p>
+<p>2、编译</p>
+<p>hexo generate</p>
+<p>一般部署上去的时候都需要编译一下，编译后，会出现一个public文件夹，将所有的md文件编译成html文件</p>
+<p>3、开启本地服务</p>
+<p>hexo server</p>
+<p>这个命令，我之前已经用过了，开启本地hexo服务用的</p>
+<p>4、部署</p>
+<p>hexo deploy</p>
+<p>部署到git上的时候，需要用这个命令，下一篇中，我们会使用到这个命令</p>
+<p>5、清除public</p>
+<p>hexo clean</p>
+<p>当source文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行这个命令，然后重新编译。</p>
+<p>以上这些都是我在使用过程中经常用到的一些hexo命令。最为详细、最为全面的说明文档当然还是在官网。请各位猛戳。<br>后记</p>
+<p>OK，下一篇介绍hexo这个系列的最后一篇文章《如何讲博客部署到git上》。</p>
+<p>大家如果有什么疑问，欢迎通过留言、微博等多种途径进行交流</p>
+<p>到现在为止我们还没有自己写过一篇文章，你是不是已经跃跃欲试了！好了，马上就来介绍自己动手完成一篇博文。<br>这篇我们要介绍两部分内容，Markdown与hexo的常用命令。</p>
+<p><a href="http://www.tuicool.com/articles/Nnuyu2A" target="_blank" rel="external">hexo基本用法</a><br><a href="http://segmentfault.com/q/1010000002777869" target="_blank" rel="external">hexo 文章中的图片路径问题</a><br><a href="http://www.tuicool.com/articles/7rIbuen" target="_blank" rel="external">为hexo添加多种图片样式</a></p>
 
       
     </div>
@@ -83,7 +108,7 @@
         
   
   <div class="tags">
-    <a href="/tags/nodejs/">nodejs</a>
+    <a href="/tags/hexo/">hexo</a>, <a href="/tags/markdown/">markdown</a>
   </div>
 
         
@@ -126,7 +151,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://loveyoghurt.github.com/2015/11/19/转-npm常用命令-冲突-酸奶/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/1940/10/24/hexo命令及markdown语法/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>

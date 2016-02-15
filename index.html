@@ -101,16 +101,66 @@
       
       
   
-    <h1 class="title"><a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及其它技巧</a></h1>
+    <h1 class="title"><a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及自定义规则</a></h1>
   
 
     </header>
-    <div class="entry" id="entry" data-content="&lt;p&gt;  jquery.validate用来验证表单真够强大，可以应付各种需求。&lt;br&gt;  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把这个name的规则设置到规则参数里，这些input就一样可以被校验了。&lt;/p&gt;
+    <div class="entry" id="entry" data-content="&lt;p&gt;  jquery.validate用来验证表单真够强大，可以应付各种需求。&lt;br&gt;  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;//表单验证规则的对象&lt;/span&gt;
+  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; _rules = {
+              name1: {
+                  required: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+                  compareDate: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+              },
+              name2: {
+                  required: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+                  compareDate: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+              }
+  }
+  &lt;span class=&quot;comment&quot;&gt;//表单验证注册&lt;/span&gt;
+  $(&lt;span class=&quot;string&quot;&gt;&quot;#form&quot;&lt;/span&gt;).validate({
+              rules: _rules,
+              submitHandler: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;{
+                  &lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;
+              }
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把应用于这个name的规则添加到_rules里，这些input就一样可以被校验了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  $(&lt;span class=&quot;string&quot;&gt;&#39;input&#39;&lt;/span&gt;).&lt;span class=&quot;keyword&quot;&gt;each&lt;/span&gt;(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(e)&lt;/span&gt;&lt;/span&gt;{
+    _rules[&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getAttribute(&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;)] = {required: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, number: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, min: &lt;span class=&quot;number&quot;&gt;1.0&lt;/span&gt;, max: &lt;span class=&quot;number&quot;&gt;999.9&lt;/span&gt;};
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  上面看到_rules里面的规则，都是jquery.validate定义好的，那么当有特殊需要自带规则无法满足时，就要自己定义一个规则。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;comment&quot;&gt;//自定义方法：对datetimepicker的验证，开始时间不可大于等于结束时间）&lt;/span&gt;
+$.validator.addMethod(&lt;span class=&quot;string&quot;&gt;&quot;compareDate&quot;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;value,element&lt;/span&gt;)&lt;/span&gt;{
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; start = $(&lt;span class=&quot;string&quot;&gt;&quot;#startTime&quot;&lt;/span&gt;).val();
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; end = $(&lt;span class=&quot;string&quot;&gt;&quot;#endTime&quot;&lt;/span&gt;).val();
+    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reg = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;RegExp&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;-&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;g&#39;&lt;/span&gt;);
+    start = start.replace(reg,&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//正则替换&lt;/span&gt;
+    end = end.replace(reg,&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;);
+    assigntime = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;.parse(start),&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;));
+    deadlinetime = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(&lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;.parse(end),&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;));
+    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(assigntime &amp;gt;= deadlinetime){
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;
+    }&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;{
+        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;
+    }
+},&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;font color=&#39;#E47068&#39;&amp;gt;结束日期必须大于开始日期&amp;lt;/font&amp;gt;&quot;&lt;/span&gt;);
+&lt;span class=&quot;comment&quot;&gt;//使用该规则&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; _rules = {
+        startTime: {
+            required: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+            compareDate: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+        },
+        endTime: {
+            required: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+            compareDate: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  这样当开始时间大于结束时间时，就会显示错误提示了&lt;/p&gt;
 ">
       <!-- 空行 -->
       
       
-        <p>  jquery.validate用来验证表单真够强大，可以应付各种需求。<br>  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把这个name的规则设置到规则参数里，这些input就一样可以被校验了。</p>
+        <p>  jquery.validate用来验证表单真够强大，可以应付各种需求。<br>  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。</p>
       
     <a href='/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/' target="_blank">阅读全部</a> 
     </div>
@@ -127,7 +177,57 @@
 
 
 <script type="text/javascript">
-  // console.log(<p>  jquery.validate用来验证表单真够强大，可以应付各种需求。<br>  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把这个name的规则设置到规则参数里，这些input就一样可以被校验了。</p>
+  // console.log(<p>  jquery.validate用来验证表单真够强大，可以应付各种需求。<br>  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。</p>
+<pre><code><span class="comment">//表单验证规则的对象</span>
+  <span class="keyword">var</span> _rules = {
+              name1: {
+                  required: <span class="literal">true</span>,
+                  compareDate: <span class="literal">true</span>
+              },
+              name2: {
+                  required: <span class="literal">true</span>,
+                  compareDate: <span class="literal">true</span>
+              }
+  }
+  <span class="comment">//表单验证注册</span>
+  $(<span class="string">"#form"</span>).validate({
+              rules: _rules,
+              submitHandler: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                  <span class="comment">//</span>
+              }
+  }
+</code></pre><p>  不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把应用于这个name的规则添加到_rules里，这些input就一样可以被校验了。</p>
+<pre><code>  $(<span class="string">'input'</span>).<span class="keyword">each</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
+    _rules[<span class="keyword">this</span>.getAttribute(<span class="string">'name'</span>)] = {required: <span class="literal">true</span>, number: <span class="literal">true</span>, min: <span class="number">1.0</span>, max: <span class="number">999.9</span>};
+});
+</code></pre><p>  上面看到_rules里面的规则，都是jquery.validate定义好的，那么当有特殊需要自带规则无法满足时，就要自己定义一个规则。</p>
+<pre><code><span class="comment">//自定义方法：对datetimepicker的验证，开始时间不可大于等于结束时间）</span>
+$.validator.addMethod(<span class="string">"compareDate"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">value,element</span>)</span>{
+    <span class="keyword">var</span> start = $(<span class="string">"#startTime"</span>).val();
+    <span class="keyword">var</span> end = $(<span class="string">"#endTime"</span>).val();
+    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'-'</span>,<span class="string">'g'</span>);
+    start = start.replace(reg,<span class="string">'/'</span>);<span class="comment">//正则替换</span>
+    end = end.replace(reg,<span class="string">'/'</span>);
+    assigntime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">parseInt</span>(<span class="built_in">Date</span>.parse(start),<span class="number">10</span>));
+    deadlinetime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">parseInt</span>(<span class="built_in">Date</span>.parse(end),<span class="number">10</span>));
+    <span class="keyword">if</span>(assigntime &gt;= deadlinetime){
+        <span class="keyword">return</span> <span class="literal">false</span>;
+    }<span class="keyword">else</span>{
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+},<span class="string">"&lt;font color='#E47068'&gt;结束日期必须大于开始日期&lt;/font&gt;"</span>);
+<span class="comment">//使用该规则</span>
+<span class="keyword">var</span> _rules = {
+        startTime: {
+            required: <span class="literal">true</span>,
+            compareDate: <span class="literal">true</span>
+        },
+        endTime: {
+            required: <span class="literal">true</span>,
+            compareDate: <span class="literal">true</span>
+        }
+}
+</code></pre><p>  这样当开始时间大于结束时间时，就会显示错误提示了</p>
 );
 </script> 
 
@@ -658,7 +758,7 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
       </li>
     
       <li>
-        <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及其它技巧</a>
+        <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及自定义规则</a>
       </li>
     
       <li>

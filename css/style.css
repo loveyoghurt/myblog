@@ -13,9 +13,11 @@ body {
   background: #eee;
   color: #444;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-family: Microsoft YaHei;
   font-size: 14px;
   text-shadow: 0 0 1px transparent;
-  background-image: url("/imgs/suzhou.jpg");
+/*background-image url('/imgs/suzhou.jpg') */
+  background-color: #ccc;
   background-image: no-repeat;
 }
 @media screen and (max-width: 1260px) {
@@ -34,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 h1 {
   font-size: 1.8em;
@@ -51,6 +53,9 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+h2 {
+  color: #fff;
 }
 .alignleft {
   float: left;
@@ -105,10 +110,10 @@ a:hover {
 }
 #header {
   text-shadow: 0 0 1px #fff;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 #header a {
-  color: #999;
+  color: #11507b;
 }
 #header a:hover {
   color: #258fb8;
@@ -118,15 +123,25 @@ a:hover {
   font-weight: normal;
   font-size: 2.5em;
   line-height: 1;
+/*position absolute*/
+  top: 0px;
 }
 #header h2 {
   font-weight: normal;
   font-size: 0.9em;
+  color: #fff;
   line-height: 1;
   margin-top: 10px;
+/*position absolute*/
+}
+#header .alignleft {
+  height: 200px;
+  width: 100%;
+  background: url("../imgs/header.jpg") no-repeat;
+/*background-repeat no-repeat*/
 }
 #header #main-nav {
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2.5em;
 }
 #header #main-nav ul {
@@ -260,7 +275,7 @@ article header .icon:before {
 }
 article header time {
   color: #999;
-  font: 0.9em "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   margin-bottom: 5px;
   display: block;
   line-height: 1;
@@ -545,7 +560,7 @@ article footer .addthis iframe {
   padding: 5px 10px;
   background: #ddd;
   color: #999;
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
   margin-bottom: 50px;
 }
@@ -644,7 +659,7 @@ article footer .addthis iframe {
 }
 #sidebar .search input {
   background: #fff;
-  font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 1em;
   padding: 10px 15px;
@@ -692,7 +707,7 @@ article footer .addthis iframe {
 #footer {
   color: #999;
   margin-bottom: 50px;
-  font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: 0.9em/1.6 Microsoft YaHei, "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
 }
 .entry .gist {

@@ -6,9 +6,7 @@
   <title>AWS使用记录 | 北京印象</title>
   <meta name="author" content="monster">
   
-  <meta name="description" content="在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。
-购买成功后，进入后台管理界面。
-开启一个linux redhat实例。ssh登录失败：`It is recommended that your private key files are NOT accessible by o">
+  <meta name="description" content="在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。购买成功后，进入后台管理界面。开启一个linux redhat实例。ssh登录失败：It is recommended that your private key files are NOT accessible by othe">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,6 +29,7 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
+  <!-- <img class="headerImg" src="imgs/header.jpg"> -->
   <h1><a href="/">北京印象</a></h1>
   <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
 </div>
@@ -44,7 +43,8 @@
   </ul>
   <div class="clearfix"></div>
 </nav>
-<div class="clearfix"></div></header>
+<div class="clearfix"></div>
+</header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
@@ -62,14 +62,9 @@
     </header>
     <div class="entry" id="entry">
       
-        <pre><code>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。
-购买成功后，进入后台管理界面。
-开启一个linux redhat实例。ssh登录失败：<span class="code">`It is recommended that your private key files are NOT accessible by others. This private key will be ignored.`</span>
-原来是私钥的权限问题，<span class="code">`chmod 600`</span>后就可以登录了。
-[<span class="link_label">aws的问题排查汇总页面</span>](<span class="link_url">http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html</span>)
+        <p>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。<br>购买成功后，进入后台管理界面。<br>开启一个linux redhat实例。ssh登录失败：<code>It is recommended that your private key files are NOT accessible by others. This private key will be ignored.</code><br>原来是私钥的权限问题，<code>chmod 600</code>后就可以登录了。<br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" target="_blank" rel="external">aws的问题排查汇总页面</a></p>
+<p>启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++</p>
 
-启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++
-</code></pre>
       
     </div>
     <footer>
@@ -128,20 +123,13 @@
 
 </div></div>
     <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:loveyoghurt.github.com">
-  </form>
-</div>
-
   
 
   
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 15px;">position</a> <a href="/tags/webstorm/" style="font-size: 15px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -155,29 +143,27 @@
   
     <li><a href="/tags/cookie/">cookie</a><small>1</small></li>
   
-    <li><a href="/tags/css/">css</a><small>3</small></li>
+    <li><a href="/tags/css/">css</a><small>2</small></li>
   
     <li><a href="/tags/github/">github</a><small>1</small></li>
   
     <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
+    <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
     <li><a href="/tags/linux/">linux</a><small>3</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
   
-    <li><a href="/tags/nodejs/">nodejs</a><small>2</small></li>
-  
-    <li><a href="/tags/npm/">npm</a><small>1</small></li>
-  
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
-    <li><a href="/tags/position/">position</a><small>2</small></li>
+    <li><a href="/tags/position/">position</a><small>1</small></li>
   
-    <li><a href="/tags/webstorm/">webstorm</a><small>2</small></li>
+    <li><a href="/tags/webstorm/">webstorm</a><small>1</small></li>
   
     <li><a href="/tags/域名/">域名</a><small>1</small></li>
+  
+    <li><a href="/tags/视频制作/">视频制作</a><small>1</small></li>
   
   </ul>
 </div>
@@ -189,11 +175,15 @@
   <ul class="entry">
     
       <li>
+        <a href="/2016/02/11/premiere制作电子相册之批量操作技巧/">premiere制作电子相册之批量操作技巧</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及其它技巧</a>
       </li>
     
       <li>
-        <a href="/2016/01/29/ssh/">ssh</a>
+        <a href="/2016/01/29/ssh连接github失败/">ssh连接github失败</a>
       </li>
     
       <li>
@@ -202,10 +192,6 @@
     
       <li>
         <a href="/2016/01/18/bootstrap-datetimepicker弹出位置不对的解决方法/">bootstrap-datetimepicker弹出位置不对的解决方法</a>
-      </li>
-    
-      <li>
-        <a href="/2015/12/22/npm常用命令/">&#39;npm常用命令&#39;</a>
       </li>
     
   </ul>

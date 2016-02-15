@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>webstorm二三则 | 北京印象</title>
+  <title>ssh连接github失败 | 北京印象</title>
   <meta name="author" content="monster">
   
-  <meta name="description" content="·同时显示多个项目目录File -&amp;gt; settings -&amp;gt; Directories -&amp;gt; Add Content Root 中添加你当前的工程目录。
-
- ·设置与远程机同步目测开一个webstorm程序，只能默认同步一个远程服务器，需要选中项目后点击如图所示来设置为默认项目这时自">
+  <meta name="description" content="在本地的 .ssh目录里存在若干账号的key，但是里面github key悄然失踪了，于是重新生成了一个。执行 ssh git@github.com 连接github，会提示Permission denied (publickey)。是哪出错了？为了看到错误信息，执行 ssh -T -v git@g">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="webstorm二三则"/>
+  <meta property="og:title" content="ssh连接github失败"/>
   <meta property="og:site_name" content="北京印象"/>
 
   
@@ -31,6 +29,7 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
+  <!-- <img class="headerImg" src="imgs/header.jpg"> -->
   <h1><a href="/">北京印象</a></h1>
   <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
 </div>
@@ -44,7 +43,8 @@
   </ul>
   <div class="clearfix"></div>
 </nav>
-<div class="clearfix"></div></header>
+<div class="clearfix"></div>
+</header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
@@ -52,19 +52,21 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-21T06:13:59.000Z"><a href="/2015/10/21/webstorm二三则-冲突-酸奶/">2015-10-21</a></time>
+        <time datetime="2016-01-29T10:14:50.000Z"><a href="/2016/01/29/ssh连接github失败/">2016-01-29</a></time>
       
       
   
-    <h1 class="title">webstorm二三则</h1>
+    <h1 class="title">ssh连接github失败</h1>
   
 
     </header>
     <div class="entry" id="entry">
       
-        <h3 id="·同时显示多个项目目录"><strong> ·同时显示多个项目目录</strong></h3><p>File -&gt; settings -&gt; Directories -&gt; Add Content Root 中添加你当前的工程目录。</p>
-<p><img src="p1.jpg" alt="如图"></p>
-<h3 id="·设置与远程机同步"><strong> ·设置与远程机同步</strong></h3><p>目测开一个webstorm程序，只能默认同步一个远程服务器，需要选中项目后点击如图所示来设置为默认项目<br><img src="p2.jpg" alt="默认部署"><br>这时自动保存才能生效，菜单中的upload也才能显示该项目名称而非…<br><img src="p3.jpg" alt=""></p>
+        <p>在本地的 .ssh目录里存在若干账号的key，但是里面github key悄然失踪了，于是重新生成了一个。执行 ssh git@github.com 连接github，会提示Permission denied (publickey)。<br>是哪出错了？为了看到错误信息，执行 <code>ssh -T -v git@github.com</code><br>这时可以看到，ssh尝试连接时只寻找了id_rsa这个key。这说明，ssh并没有把新生成的key添加到自己的key列表里。所以现在要做的就是把github的key添加进来。<br>先执行  </p>
+<pre><code>eval \<span class="escape">`s</span>sh-agent\<span class="escape">` </span> （是～键上的那个\<span class="escape">`）</span>
+</code></pre><p> 再执行 </p>
+<pre><code>ssh-<span class="built_in">add</span> ~/.ssh/<span class="variable">key</span>文件
+</code></pre><p>  添加成功， ssh-add -l 可以看到新加的rsa了。 再执行ssh git@github.com，成功连接到github！</p>
 
       
     </div>
@@ -74,7 +76,7 @@
         
   
   <div class="tags">
-    <a href="/tags/webstorm/">webstorm</a>
+    <a href="/tags/github/">github</a>
   </div>
 
         
@@ -117,27 +119,20 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://loveyoghurt.github.com/2015/10/21/webstorm二三则-冲突-酸奶/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/2016/01/29/ssh连接github失败/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
 
 </div></div>
     <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:loveyoghurt.github.com">
-  </form>
-</div>
-
   
 
   
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 15px;">position</a> <a href="/tags/webstorm/" style="font-size: 15px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -151,29 +146,27 @@
   
     <li><a href="/tags/cookie/">cookie</a><small>1</small></li>
   
-    <li><a href="/tags/css/">css</a><small>3</small></li>
+    <li><a href="/tags/css/">css</a><small>2</small></li>
   
     <li><a href="/tags/github/">github</a><small>1</small></li>
   
     <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/tags/jquery/">jquery</a><small>1</small></li>
+    <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
     <li><a href="/tags/linux/">linux</a><small>3</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
   
-    <li><a href="/tags/nodejs/">nodejs</a><small>2</small></li>
-  
-    <li><a href="/tags/npm/">npm</a><small>1</small></li>
-  
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
-    <li><a href="/tags/position/">position</a><small>2</small></li>
+    <li><a href="/tags/position/">position</a><small>1</small></li>
   
-    <li><a href="/tags/webstorm/">webstorm</a><small>2</small></li>
+    <li><a href="/tags/webstorm/">webstorm</a><small>1</small></li>
   
     <li><a href="/tags/域名/">域名</a><small>1</small></li>
+  
+    <li><a href="/tags/视频制作/">视频制作</a><small>1</small></li>
   
   </ul>
 </div>
@@ -185,11 +178,15 @@
   <ul class="entry">
     
       <li>
+        <a href="/2016/02/11/premiere制作电子相册之批量操作技巧/">premiere制作电子相册之批量操作技巧</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及其它技巧</a>
       </li>
     
       <li>
-        <a href="/2016/01/29/ssh/">ssh</a>
+        <a href="/2016/01/29/ssh连接github失败/">ssh连接github失败</a>
       </li>
     
       <li>
@@ -198,10 +195,6 @@
     
       <li>
         <a href="/2016/01/18/bootstrap-datetimepicker弹出位置不对的解决方法/">bootstrap-datetimepicker弹出位置不对的解决方法</a>
-      </li>
-    
-      <li>
-        <a href="/2015/12/22/npm常用命令/">&#39;npm常用命令&#39;</a>
       </li>
     
   </ul>

@@ -4,6 +4,6 @@
   width : 100,
   height : 100
 });
-  // qrcode.makeCode(window.location.href);
-  qrcode.makeCode('http://www.loveyoghurt.xyz');
+  qrcode.makeCode(window.location.href);
+  // qrcode.makeCode("http://loveyoghurt.xyz");
 })(jQuery);

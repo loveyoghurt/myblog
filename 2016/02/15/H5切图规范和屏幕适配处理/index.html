@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>about | 北京印象</title>
+  <title>H5切图规范和屏幕适配处理 | 北京印象</title>
   <meta name="author" content="monster">
+  
+  <meta name="description" content="H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不能解决适配问题，必须从设计出图上规范了。   该项目的开发场景：
+  ·每次滑动滚动一屏，每屏是一张图片  ·设计稿尺寸1242*2208（iphone6 plus），高宽比16">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="about"/>
+  <meta property="og:title" content="H5切图规范和屏幕适配处理"/>
   <meta property="og:site_name" content="北京印象"/>
 
   
@@ -44,26 +47,90 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
       
+        <div class="icon"></div>
+        <time datetime="2016-02-15T07:40:05.000Z"><a href="/2016/02/15/H5切图规范和屏幕适配处理/">2016-02-15</a></time>
+      
       
   
-    <h1 class="title">about</h1>
+    <h1 class="title">H5切图规范和屏幕适配处理</h1>
   
 
     </header>
     <div class="entry" id="entry">
       
-        
+        <p>  H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不<br>能解决适配问题，必须从设计出图上规范了。<br>   该项目的开发场景：</p>
+<p>  ·每次滑动滚动一屏，每屏是一张图片<br>  ·设计稿尺寸1242*2208（iphone6 plus），高宽比16:9<br>  ·图片宽度百分百填充，垂直居中显示<br>  ·由于浏览器窗口尺寸不一，图片不能完整显示，上下有遮挡部分如下：<br>  <img src="1.jpg =100x20" alt=""> <img src="1.1.jpg =100x20" alt=""></p>
+<p>   所以在设计图片的时候要把有效内容约束在可浏览器可显示的区域里，上下留出相等高度的空间，空间的高度由浏览器高度决定。以下是主流机型和主流浏览器情况：<br>        <img src="2.jpg" alt=""></p>
+<p>  等比扩大到6plus的宽度，再看屏幕的上下占用高度：<br>        <img src="3.jpg" alt=""></p>
+<p>  按照高宽比例差异可分为两类：<br>        1、iphone4的微信和android（虚拟按键）的QQ<br>        2、其他手机</p>
+<p>设计的同学在画图时，按越小的区域为标准，就可以兼容越多的机型和浏览器（注意：不要按实际显示区域的高度作为设计稿高度，因为浏览器可以设置全屏模式）。建议提供两份设计以兼顾内容展示和视觉效果。 具体显示区域可根据兼容需求定：</p>
+<table>
+<thead>
+<tr>
+<th>机型</th>
+<th style="text-align:center">浏览器</th>
+<th style="text-align:center">屏幕分辨率</th>
+<th style="text-align:center">页面显示区域</th>
+<th style="text-align:right">上下空余</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>android（虚拟按键）</td>
+<td style="text-align:center">QQ浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1644 = 1/1.32</td>
+<td style="text-align:right">258+306 = 564</td>
+</tr>
+<tr>
+<td>android</td>
+<td style="text-align:center">QQ浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1774 = 1/1.42</td>
+<td style="text-align:right">258+176 = 434</td>
+</tr>
+<tr>
+<td>android（虚拟按键）</td>
+<td style="text-align:center">飞凡app</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1798 = 1/1.44</td>
+<td style="text-align:right">280+130 = 410</td>
+</tr>
+<tr>
+<td>android</td>
+<td style="text-align:center">微博浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1817 = 1/1.46</td>
+<td style="text-align:right">237+154 = 391</td>
+</tr>
+<tr>
+<td>iphone4</td>
+<td style="text-align:center">微信浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">640/830   = 1/1.29</td>
+<td style="text-align:right">130+0=130</td>
+</tr>
+</tbody>
+</table>
+<p>例如，要兼容以上所有情况，那么出两份设计图，取最小显示区域：<br>  1、上下各留250/2=125<br>  2、上下各留564/2=282。</p>
+<p>考虑到设备和浏览器的纷繁复杂和日新月异，最终还是要根据实际效果即时调整设计稿和前端代码。</p>
+
       
     </div>
     <footer>
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/H5/">H5</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -104,7 +171,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://loveyoghurt.github.com/about/index-1.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/2016/02/15/H5切图规范和屏幕适配处理/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>

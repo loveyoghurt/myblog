@@ -51,6 +51,156 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-02-15T07:40:05.000Z"><a href="/2016/02/15/H5切图规范和屏幕适配处理/">2016-02-15</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/02/15/H5切图规范和屏幕适配处理/">H5切图规范和屏幕适配处理</a></h1>
+  
+
+    </header>
+    <div class="entry" id="entry" data-content="&lt;p&gt;  H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不&lt;br&gt;能解决适配问题，必须从设计出图上规范了。&lt;br&gt;   该项目的开发场景：&lt;/p&gt;
+&lt;p&gt;  ·每次滑动滚动一屏，每屏是一张图片&lt;br&gt;  ·设计稿尺寸1242*2208（iphone6 plus），高宽比16:9&lt;br&gt;  ·图片宽度百分百填充，垂直居中显示&lt;br&gt;  ·由于浏览器窗口尺寸不一，图片不能完整显示，上下有遮挡部分如下：&lt;br&gt;  &lt;img src=&quot;1.jpg =100x20&quot; alt=&quot;&quot;&gt; &lt;img src=&quot;1.1.jpg =100x20&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   所以在设计图片的时候要把有效内容约束在可浏览器可显示的区域里，上下留出相等高度的空间，空间的高度由浏览器高度决定。以下是主流机型和主流浏览器情况：&lt;br&gt;        &lt;img src=&quot;2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  等比扩大到6plus的宽度，再看屏幕的上下占用高度：&lt;br&gt;        &lt;img src=&quot;3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  按照高宽比例差异可分为两类：&lt;br&gt;        1、iphone4的微信和android（虚拟按键）的QQ&lt;br&gt;        2、其他手机&lt;/p&gt;
+&lt;p&gt;设计的同学在画图时，按越小的区域为标准，就可以兼容越多的机型和浏览器（注意：不要按实际显示区域的高度作为设计稿高度，因为浏览器可以设置全屏模式）。建议提供两份设计以兼顾内容展示和视觉效果。 具体显示区域可根据兼容需求定：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;机型&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;浏览器&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;屏幕分辨率&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;页面显示区域&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;上下空余&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;android（虚拟按键）&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;QQ浏览器&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242*2208&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242/1644 = 1/1.32&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;258+306 = 564&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;android&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;QQ浏览器&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242*2208&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242/1774 = 1/1.42&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;258+176 = 434&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;android（虚拟按键）&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;飞凡app&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242*2208&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242/1798 = 1/1.44&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;280+130 = 410&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;android&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;微博浏览器&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242*2208&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242/1817 = 1/1.46&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;237+154 = 391&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iphone4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;微信浏览器&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1242*2208&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;640/830   = 1/1.29&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;130+0=130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例如，要兼容以上所有情况，那么出两份设计图，取最小显示区域：&lt;br&gt;  1、上下各留250/2=125&lt;br&gt;  2、上下各留564/2=282。&lt;/p&gt;
+&lt;p&gt;考虑到设备和浏览器的纷繁复杂和日新月异，最终还是要根据实际效果即时调整设计稿和前端代码。&lt;/p&gt;
+">
+      <!-- 空行 -->
+      
+      
+        <p>  H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不<br>能解决适配问题，必须从设计出图上规范了。<br>   该项目的开发场景：</p>
+      
+    <a href='/2016/02/15/H5切图规范和屏幕适配处理/' target="_blank">阅读全部</a> 
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+<script type="text/javascript">
+  // console.log(<p>  H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不<br>能解决适配问题，必须从设计出图上规范了。<br>   该项目的开发场景：</p>
+<p>  ·每次滑动滚动一屏，每屏是一张图片<br>  ·设计稿尺寸1242*2208（iphone6 plus），高宽比16:9<br>  ·图片宽度百分百填充，垂直居中显示<br>  ·由于浏览器窗口尺寸不一，图片不能完整显示，上下有遮挡部分如下：<br>  <img src="1.jpg =100x20" alt=""> <img src="1.1.jpg =100x20" alt=""></p>
+<p>   所以在设计图片的时候要把有效内容约束在可浏览器可显示的区域里，上下留出相等高度的空间，空间的高度由浏览器高度决定。以下是主流机型和主流浏览器情况：<br>        <img src="2.jpg" alt=""></p>
+<p>  等比扩大到6plus的宽度，再看屏幕的上下占用高度：<br>        <img src="3.jpg" alt=""></p>
+<p>  按照高宽比例差异可分为两类：<br>        1、iphone4的微信和android（虚拟按键）的QQ<br>        2、其他手机</p>
+<p>设计的同学在画图时，按越小的区域为标准，就可以兼容越多的机型和浏览器（注意：不要按实际显示区域的高度作为设计稿高度，因为浏览器可以设置全屏模式）。建议提供两份设计以兼顾内容展示和视觉效果。 具体显示区域可根据兼容需求定：</p>
+<table>
+<thead>
+<tr>
+<th>机型</th>
+<th style="text-align:center">浏览器</th>
+<th style="text-align:center">屏幕分辨率</th>
+<th style="text-align:center">页面显示区域</th>
+<th style="text-align:right">上下空余</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>android（虚拟按键）</td>
+<td style="text-align:center">QQ浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1644 = 1/1.32</td>
+<td style="text-align:right">258+306 = 564</td>
+</tr>
+<tr>
+<td>android</td>
+<td style="text-align:center">QQ浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1774 = 1/1.42</td>
+<td style="text-align:right">258+176 = 434</td>
+</tr>
+<tr>
+<td>android（虚拟按键）</td>
+<td style="text-align:center">飞凡app</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1798 = 1/1.44</td>
+<td style="text-align:right">280+130 = 410</td>
+</tr>
+<tr>
+<td>android</td>
+<td style="text-align:center">微博浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">1242/1817 = 1/1.46</td>
+<td style="text-align:right">237+154 = 391</td>
+</tr>
+<tr>
+<td>iphone4</td>
+<td style="text-align:center">微信浏览器</td>
+<td style="text-align:center">1242*2208</td>
+<td style="text-align:center">640/830   = 1/1.29</td>
+<td style="text-align:right">130+0=130</td>
+</tr>
+</tbody>
+</table>
+<p>例如，要兼容以上所有情况，那么出两份设计图，取最小显示区域：<br>  1、上下各留250/2=125<br>  2、上下各留564/2=282。</p>
+<p>考虑到设备和浏览器的纷繁复杂和日新月异，最终还是要根据实际效果即时调整设计稿和前端代码。</p>
+);
+</script> 
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-02-11T09:10:35.000Z"><a href="/2016/02/11/premiere制作电子相册之批量操作技巧/">2016-02-11</a></time>
       
       
@@ -101,7 +251,7 @@
       
       
   
-    <h1 class="title"><a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及自定义规则</a></h1>
+    <h1 class="title"><a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate花样使用技巧</a></h1>
   
 
     </header>
@@ -155,7 +305,14 @@ $.validator.addMethod(&lt;span class=&quot;string&quot;&gt;&quot;compareDate&quo
             compareDate: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
         }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  这样当开始时间大于结束时间时，就会显示错误提示了&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  这样当开始时间大于结束时间时，就会显示错误提示了。&lt;/p&gt;
+&lt;h3 id=&quot;·坑&quot;&gt;&lt;strong&gt;·坑&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;  曾经在对一个表单的验证，弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样必然能正确校验所有元素。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？&lt;br&gt;    打开源码，赫然发现validate()方法里：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//&lt;span class=&quot;instruction&quot;&gt; check &lt;/span&gt;if a validator for this form was already created
+  var validator =&lt;span class=&quot;function&quot;&gt; $.data(&lt;/span&gt; this&lt;span class=&quot;keyword&quot;&gt;[&lt;/span&gt;0], &lt;span class=&quot;string&quot;&gt;&quot;validator&quot;&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;)&lt;/span&gt;;
+ &lt;span class=&quot;instruction&quot;&gt; if &lt;/span&gt;( validator &lt;span class=&quot;function&quot;&gt;)&lt;/span&gt; {
+     &lt;span class=&quot;instruction&quot;&gt; return &lt;/span&gt;validator;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 如果某个jquery对象上的validator已存在，则不再接受新的创建！fuck this&lt;br&gt;  所以$(‘#form’).validate(args)只能写一次，写在要验证的DOM创建完成之后&lt;/p&gt;
 ">
       <!-- 空行 -->
       
@@ -227,7 +384,14 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
             compareDate: <span class="literal">true</span>
         }
 }
-</code></pre><p>  这样当开始时间大于结束时间时，就会显示错误提示了</p>
+</code></pre><p>  这样当开始时间大于结束时间时，就会显示错误提示了。</p>
+<h3 id="·坑"><strong>·坑</strong></h3><p>  曾经在对一个表单的验证，弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样必然能正确校验所有元素。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？<br>    打开源码，赫然发现validate()方法里：</p>
+<pre><code>//<span class="instruction"> check </span>if a validator for this form was already created
+  var validator =<span class="function"> $.data(</span> this<span class="keyword">[</span>0], <span class="string">"validator"</span> <span class="function">)</span>;
+ <span class="instruction"> if </span>( validator <span class="function">)</span> {
+     <span class="instruction"> return </span>validator;
+  }
+</code></pre><p> 如果某个jquery对象上的validator已存在，则不再接受新的创建！fuck this<br>  所以$(‘#form’).validate(args)只能写一次，写在要验证的DOM创建完成之后</p>
 );
 </script> 
 
@@ -653,46 +817,6 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 );
 </script> 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-05T08:52:08.000Z"><a href="/2015/11/05/github-pages绑定域名/">2015-11-05</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/05/github-pages绑定域名/">github pages绑定域名</a></h1>
-  
-
-    </header>
-    <div class="entry" id="entry" data-content="&lt;p&gt;  ·在本地hexo目录的source文件夹中建立CNAME文件，内容为要绑定的域名，如: myurl.com。hexo发布时会将CNAME发布到blog的根目录。&lt;img src=&quot;p1.png&quot; alt=&quot;域名解析&quot;&gt;&lt;br&gt;  ·在万网设置域名解析，类型选择CNAME，主机记录空白不填，记录值写github pages的url。保存后等待若干（大概是10+）分钟后生效。&lt;/p&gt;
-">
-      <!-- 空行 -->
-      
-      
-        <p>  ·在本地hexo目录的source文件夹中建立CNAME文件，内容为要绑定的域名，如: myurl.com。hexo发布时会将CNAME发布到blog的根目录。<img src="p1.png" alt="域名解析"><br>  ·在万网设置域名解析，类型选择CNAME，主机记录空白不填，记录值写github pages的url。保存后等待若干（大概是10+）分钟后生效。</p>
-      
-    <a href='/2015/11/05/github-pages绑定域名/' target="_blank">阅读全部</a> 
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-<script type="text/javascript">
-  // console.log(<p>  ·在本地hexo目录的source文件夹中建立CNAME文件，内容为要绑定的域名，如: myurl.com。hexo发布时会将CNAME发布到blog的根目录。<img src="p1.png" alt="域名解析"><br>  ·在万网设置域名解析，类型选择CNAME，主机记录空白不填，记录值写github pages的url。保存后等待若干（大概是10+）分钟后生效。</p>
-);
-</script> 
-
 
 <nav id="pagination">
   
@@ -708,7 +832,7 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -719,6 +843,8 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
   <ul class="entry">
   
     <li><a href="/tags/async-js加载/">-async -js加载</a><small>1</small></li>
+  
+    <li><a href="/tags/H5/">H5</a><small>1</small></li>
   
     <li><a href="/tags/cookie/">cookie</a><small>1</small></li>
   
@@ -754,11 +880,15 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
   <ul class="entry">
     
       <li>
+        <a href="/2016/02/15/H5切图规范和屏幕适配处理/">H5切图规范和屏幕适配处理</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/11/premiere制作电子相册之批量操作技巧/">premiere制作电子相册之批量操作技巧</a>
       </li>
     
       <li>
-        <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate验证不定个数输入框及自定义规则</a>
+        <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate花样使用技巧</a>
       </li>
     
       <li>
@@ -767,10 +897,6 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
     
       <li>
         <a href="/2016/01/19/jquery对checkbox的各种操作/">jquery操作checkbox以及jquery1.6中的.prop()和.attr()异同</a>
-      </li>
-    
-      <li>
-        <a href="/2016/01/18/bootstrap-datetimepicker弹出位置不对的解决方法/">bootstrap-datetimepicker弹出位置不对的解决方法</a>
       </li>
     
   </ul>

@@ -31,7 +31,7 @@
   <h1><a href="/">北京印象</a></h1>
   <h2><a href="/">秩秩斯干，幽幽南山</a></h2>
 </div>
-<div id='qrcode'></div>
+<!-- <div id='qrcode'></div> -->
 <nav id="main-nav" class="alignright">
   <ul>
     
@@ -85,11 +85,6 @@
 
 
 
-<script type="text/javascript">
-  // console.log(<p>绝了！这种作品才是广大群主喜闻乐见的。可惜我们没有这种土壤。<br>小小视频情节搭配恰到好处，经典台词，真粉才能领会。Luke终结Harry的时候，说的是Obiwan和Anakin决战之后的台词，所以Harry一脸郁闷的感叹你特么在说神马！而最后阳台小伙喊的，乱入了甘道夫摔下凯撒督姆桥时佛罗多的呐喊。</p>
-<p><div id="play_player" class="play_player" style="height:550px"><embed style="width: 100%; height: 100%;" id="video_player" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" src="http://tv.sohu.com/upload/swf/20160201/Main.swf" quality="high" bgcolor="#000000" allowfullscreen="true" allowscriptaccess="always" wmode="transparent" flashvars="&amp;cmscat=56page;4;120321102&amp;oad=&amp;ead=&amp;pad=&amp;fbarad=&amp;flogoad=&amp;flogodelay=&amp;tlogoad=&amp;tlogodelay=&amp;fbottomad=&amp;fbottomdelay=&amp;ftitlead=&amp;ftitledelay=&amp;domain=inner&amp;sogouBtn=0&amp;skin=0&amp;api_key=&amp;enforceMP4=&amp;xuid=&amp;recommend=&amp;showRecommend=&amp;playercover=&amp;vid56=120321102&amp;autoplay=true&amp;pageurl=http://www.56.com/u33/v_MTIwMzIxMTAy.html&amp;showCtrlBar=1&amp;jump=0&amp;sid=null&amp;onPlayerReady=sohuPlayer.notifyReady&amp;enforceHTML5=&amp;uuid=9b1aac12-54c6-b997-2567-e942c70a6dcc&amp;topBarFull=1" height="100%" width="100%"><br></div><br>哈哈哈！</p>
-);
-</script> 
 
   <article class="post">
   
@@ -184,65 +179,6 @@
 
 
 
-<script type="text/javascript">
-  // console.log(<p>  H5项目对于不同手机分辨率的适配，可以用响应式解决。最近一个项目的H5展示页，每页是一张整图，滑屏时翻一整页，响应式已经不能解决适配问题，必须从设计出图上规范了。<br>   该项目的开发场景：</p>
-<p>  ·每次滑动滚动一屏，每屏是一张图片<br>  ·设计稿尺寸1242*2208（iphone6 plus），高宽比16:9<br>  ·图片宽度百分百填充，垂直居中显示<br>  ·由于浏览器窗口尺寸不一，图片不能完整显示，上下有遮挡部分如下：<br>  <img src="1.jpg =100x20" alt=""> <img src="1.1.jpg =100x20" alt=""></p>
-<p>   所以在设计图片的时候要把有效内容约束在可浏览器可显示的区域里，上下留出相等高度的空间，空间的高度由浏览器高度决定。以下是主流机型和主流浏览器情况：<br>        <img src="2.jpg" alt=""></p>
-<p>  等比扩大到6plus的宽度，再看屏幕的上下占用高度：<br>        <img src="3.jpg" alt=""></p>
-<p>  按照高宽比例差异可分为两类：<br>        1、iphone4的微信和android（虚拟按键）的QQ<br>        2、其他手机</p>
-<p>设计的同学在画图时，按越小的区域为标准，就可以兼容越多的机型和浏览器（注意：不要按实际显示区域的高度作为设计稿高度，因为浏览器可以设置全屏模式）。建议提供两份设计以兼顾内容展示和视觉效果。 具体显示区域可根据兼容需求定：</p>
-<table>
-<thead>
-<tr>
-<th>机型</th>
-<th style="text-align:center">浏览器</th>
-<th style="text-align:center">屏幕分辨率</th>
-<th style="text-align:center">页面显示区域</th>
-<th style="text-align:right">上下空余</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>android（虚拟按键）</td>
-<td style="text-align:center">QQ浏览器</td>
-<td style="text-align:center">1242*2208</td>
-<td style="text-align:center">1242/1644 = 1/1.32</td>
-<td style="text-align:right">258+306 = 564</td>
-</tr>
-<tr>
-<td>android</td>
-<td style="text-align:center">QQ浏览器</td>
-<td style="text-align:center">1242*2208</td>
-<td style="text-align:center">1242/1774 = 1/1.42</td>
-<td style="text-align:right">258+176 = 434</td>
-</tr>
-<tr>
-<td>android（虚拟按键）</td>
-<td style="text-align:center">飞凡app</td>
-<td style="text-align:center">1242*2208</td>
-<td style="text-align:center">1242/1798 = 1/1.44</td>
-<td style="text-align:right">280+130 = 410</td>
-</tr>
-<tr>
-<td>android</td>
-<td style="text-align:center">微博浏览器</td>
-<td style="text-align:center">1242*2208</td>
-<td style="text-align:center">1242/1817 = 1/1.46</td>
-<td style="text-align:right">237+154 = 391</td>
-</tr>
-<tr>
-<td>iphone4</td>
-<td style="text-align:center">微信浏览器</td>
-<td style="text-align:center">1242*2208</td>
-<td style="text-align:center">640/830   = 1/1.29</td>
-<td style="text-align:right">130+0=130</td>
-</tr>
-</tbody>
-</table>
-<p>例如，要兼容以上所有情况，那么出两份设计图，取最小显示区域：<br>  1、上下各留250/2=125<br>  2、上下各留564/2=282。</p>
-<p>考虑到设备和浏览器的纷繁复杂和日新月异，最终还是要根据实际效果即时调整设计稿和前端代码。</p>
-);
-</script> 
 
   <article class="post">
   
@@ -285,13 +221,6 @@
 
 
 
-<script type="text/javascript">
-  // console.log(<p>  过年突然又要帮忙处理婚礼视频o(╯□╰)o  说实话premiere这东西，一年也难得碰两次，就像曾经为考试而生的英语一样，每次翻出来，都得重新来一遍。好吧，这次就把一些关键点记录下来。</p>
-<h3 id="·电子相册播放时长"><strong>·电子相册播放时长</strong></h3><p>  制作电子相册的时候，把图片拖到时间轴上会有一个默认的播放时长，这个时长可以在编辑-&gt;首选项-&gt;常规里的静止图像默认播放时间设置<br>  <img src="1.jpg" alt=""><br>  当然，在开始的时候往往难以确定最终效果，那么在我们将素材放到时间轴上之后，可以选中要调整的片段，右键-&gt;速度/持续时间…，来设置时长。注意！如果选中多个片段，在缩减播放时间后片段之间会产生空隙，要避免空隙的话，在刚刚设置时长的对话框里，勾选上“波纹编辑，移动尾部剪辑”，这样点确定之后，各剪辑又衔接到一起了。<br>  <img src="2.jpg" alt=""></p>
-<h3 id="·批量添加转场效果"><strong>·批量添加转场效果</strong></h3><p>  在效果栏里，右键要添加的效果，设为默认。<br>  <img src="3.jpg" alt=""><br>  然后选中要添加的素材，在“项目”窗口右键-&gt;自动匹配序列…，确定后，素材自动导入时间轴并带有默认转场效果。如果要添加多种效果，那只能一个个的托了。<br>  <img src="4.jpg" alt=""></p>
-<h3 id="·素材处理"><strong> ·素材处理</strong></h3><p>  音频不支持MP3格式，mp3拖到时间轴是没有声音的。要转成wav才能导入。<br>  视频如果尺寸很大，最好在编辑前用格式工厂缩小尺寸；除非电脑性能够强劲~ 另外，格式工厂也可以做视频的旋转。</p>
-);
-</script> 
 
   <article class="post">
   
@@ -388,67 +317,6 @@ $.validator.addMethod(&lt;span class=&quot;string&quot;&gt;&quot;compareDate&quo
 
 
 
-<script type="text/javascript">
-  // console.log(<p>  jquery.validate用来验证表单真够强大，可以应付各种需求。<br>  jquery.validate用name来作为标识设置验证规则，对于简单的表单，在每个input标签上定义name，然后js里设置相应的规则就好了。</p>
-<pre><code><span class="comment">//表单验证规则的对象</span>
-  <span class="keyword">var</span> _rules = {
-              name1: {
-                  required: <span class="literal">true</span>,
-                  compareDate: <span class="literal">true</span>
-              },
-              name2: {
-                  required: <span class="literal">true</span>,
-                  compareDate: <span class="literal">true</span>
-              }
-  }
-  <span class="comment">//表单验证注册</span>
-  $(<span class="string">"#form"</span>).validate({
-              rules: _rules,
-              submitHandler: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-                  <span class="comment">//</span>
-              }
-  }
-</code></pre><p>  不过当表单里的输入框突然多起来，甚至是动态生成时，一个个的把name写在验证方法里就不可取了。应对的方法也简单，就在js里按规则分别遍历input集合设定name属性，然后把应用于这个name的规则添加到_rules里，这些input就一样可以被校验了。</p>
-<pre><code>  $(<span class="string">'input'</span>).<span class="keyword">each</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
-    _rules[<span class="keyword">this</span>.getAttribute(<span class="string">'name'</span>)] = {required: <span class="literal">true</span>, number: <span class="literal">true</span>, min: <span class="number">1.0</span>, max: <span class="number">999.9</span>};
-});
-</code></pre><p>  上面看到_rules里面的规则，都是jquery.validate定义好的，那么当有特殊需要自带规则无法满足时，就要自己定义一个规则。</p>
-<pre><code><span class="comment">//自定义方法：对datetimepicker的验证，开始时间不可大于等于结束时间）</span>
-$.validator.addMethod(<span class="string">"compareDate"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">value,element</span>)</span>{
-    <span class="keyword">var</span> start = $(<span class="string">"#startTime"</span>).val();
-    <span class="keyword">var</span> end = $(<span class="string">"#endTime"</span>).val();
-    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'-'</span>,<span class="string">'g'</span>);
-    start = start.replace(reg,<span class="string">'/'</span>);<span class="comment">//正则替换</span>
-    end = end.replace(reg,<span class="string">'/'</span>);
-    assigntime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">parseInt</span>(<span class="built_in">Date</span>.parse(start),<span class="number">10</span>));
-    deadlinetime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">parseInt</span>(<span class="built_in">Date</span>.parse(end),<span class="number">10</span>));
-    <span class="keyword">if</span>(assigntime &gt;= deadlinetime){
-        <span class="keyword">return</span> <span class="literal">false</span>;
-    }<span class="keyword">else</span>{
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }
-},<span class="string">"&lt;font color='#E47068'&gt;结束日期必须大于开始日期&lt;/font&gt;"</span>);
-<span class="comment">//使用该规则</span>
-<span class="keyword">var</span> _rules = {
-        startTime: {
-            required: <span class="literal">true</span>,
-            compareDate: <span class="literal">true</span>
-        },
-        endTime: {
-            required: <span class="literal">true</span>,
-            compareDate: <span class="literal">true</span>
-        }
-}
-</code></pre><p>  这样当开始时间大于结束时间时，就会显示错误提示了。</p>
-<h3 id="·坑"><strong>·坑</strong></h3><p>  曾经在对一个表单的验证，弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样必然能正确校验所有元素。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？<br>    打开源码，赫然发现validate()方法里：</p>
-<pre><code>//<span class="instruction"> check </span>if a validator for this form was already created
-  var validator =<span class="function"> $.data(</span> this<span class="keyword">[</span>0], <span class="string">"validator"</span> <span class="function">)</span>;
- <span class="instruction"> if </span>( validator <span class="function">)</span> {
-     <span class="instruction"> return </span>validator;
-  }
-</code></pre><p> 如果某个jquery对象上的validator已存在，则不再接受新的创建！fuck this<br>  所以$(‘#form’).validate(args)只能写一次，写在要验证的DOM创建完成之后</p>
-);
-</script> 
 
   <article class="post">
   
@@ -492,14 +360,6 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
 
 
 
-<script type="text/javascript">
-  // console.log(<p>在本地的 .ssh目录里存在若干账号的key，但是里面github key悄然失踪了，于是重新生成了一个。执行 ssh git@github.com 连接github，会提示Permission denied (publickey)。<br>是哪出错了？为了看到错误信息，执行 <code>ssh -T -v git@github.com</code><br>这时可以看到，ssh尝试连接时只寻找了id_rsa这个key。这说明，ssh并没有把新生成的key添加到自己的key列表里。所以现在要做的就是把github的key添加进来。<br>先执行  </p>
-<pre><code>eval \<span class="escape">`s</span>sh-agent\<span class="escape">` </span> （是～键上的那个\<span class="escape">`）</span>
-</code></pre><p> 再执行 </p>
-<pre><code>ssh-<span class="built_in">add</span> ~/.ssh/<span class="variable">key</span>文件
-</code></pre><p>  添加成功， ssh-add -l 可以看到新加的rsa了。 再执行ssh git@github.com，成功连接到github！</p>
-);
-</script> 
 
   <article class="post">
   
@@ -582,53 +442,6 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
 
 
 
-<script type="text/javascript">
-  // console.log(<p>   最近在iteye的新闻中看到jQuery已经更新到了1.6.1。和之前版本的最大变化是增加了.prop方法。但是.prop()方法和.attr()方法，单从字面上很难区分。在汉语中properties和attributes都有表示“属性”的意思。<br>下面根据这篇博文，简要翻译了.prop()和.attr()的用法：</p>
-<p>1、从1.5.2升级到1.6.1</p>
-<p>通过介绍新方法.prop()以及.attr()方法的改变，jQuery1.6.1引起了一场关于attributes和properties之间有何区别和联系的激烈讨论。同时，1.6.1也解决了一些向后兼容性问题。当从1.5.2升级到1.6.1时，你不必修改任何attribute代码。</p>
-<p>下面是关于jQuery1.6和1.6.1中Attributes模块变化的描述，以及.attr()方法和.prop()方法的首选使用。然而，正如前面所述，jQuery1.6.1允许你使用.attr()方法就像以前它被使用在所有的情况中一样。</p>
-<p>2、发生了什么变化</p>
-<p>Attributes模块的变化是移除了attributes和properties之间模棱两可的东西，但是在jQuery社区中引起了一些混乱，因为在1.6之前的所有版本中都使用一个方法(.attr())来处理attributes和properties。但是老的.attr()方法有一些bug，很难维护。jQuery1.6.1对Attributes模块进行了更新，并且修复了几个bug。</p>
-<p>特别提到的是，boolean attributes，比如：checked,selected,readonly和disabled在1.6.1中和1.6之前的处理相同。这意味着下面的代码：</p>
-<p>Js代码  收藏代码</p>
-<pre><code>$<span class="params">(“:checkbox”)</span>.attr<span class="params">(“checked”, <span class="literal">true</span>)</span>;  
-$<span class="params">(“option”)</span>.attr<span class="params">(“selected”, <span class="literal">true</span>)</span>;  
-$<span class="params">(“input”)</span>.attr<span class="params">(“readonly”, <span class="literal">true</span>)</span>;  
-$<span class="params">(“input”)</span>.attr<span class="params">(“disabled”, <span class="literal">true</span>)</span>;  
-</code></pre><p> 甚至是这样的代码：</p>
-<p>Js代码  收藏代码</p>
-<pre><code><span class="keyword">if</span> <span class="params">( $<span class="params">(“:checkbox”)</span>.attr<span class="params">(“checked”)</span> )</span> { <span class="comment">/* Do something */</span> }  
-</code></pre><p>在1.6.1中没有必要为了保持之前期望的运行结果而发生任何改变。</p>
-<p>为了让jQuery1.6中的.attr()方法的变化被理解的清楚些，下面是一些使用.attr()的例子，虽然在jQuery之前的版本中能正常工作，但是现在必须使用.prop（）方法代替：</p>
-<p>首先，window或document中使用.attr()方法在jQuery1.6中不能正常运行，因为window和document中不能有attributes。它们包含properties(比如：location或readyState)，必须使用.prop()方法操作或简单地使用javascript原生的方法。在jQuery1.6.1中，window和document中使用.attr()将被自动转成使用.prop，而不是抛出一个错误。</p>
-<p>其次，checked,selected和前面提到的其它boolean attributes，因为这些attributes和其相应的properties之间的特殊关系而被特殊对待。基本上，一个attribute就是以下html中你看到的：</p>
-<p>Js代码  收藏代码</p>
-<pre><code><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">”checkbox”</span> <span class="attribute">checked</span>=<span class="value">”checked”</span>&gt;</span>  
-</code></pre><p>boolean attributes，比如：checked，仅被设置成默认值或初始值。在一个checkbox的元素中，checked attributes在页面加载的时候就被设置，而不管checkbox元素是否被选中。</p>
-<p>properties就是浏览器用来记录当前值的东西。正常情况下，properties反映它们相应的attributes(如果存在的话)。但这并不是boolean attriubutes的情况。当用户点击一个checkbox元素或选中一个select元素的一个option时，boolean properties保持最新。但相应的boolean attributes是不一样的，正如上面所述，它们仅被浏览器用来保存初始值。</p>
-<p>Js代码  收藏代码</p>
-<pre><code><span class="variable">$(</span>“<span class="symbol">:checkbox</span>”).get(<span class="number">0</span>).checked = <span class="keyword">true</span>;  
-<span class="regexp">//</span> <span class="constant">Is </span>the same as <span class="variable">$(</span><span class="string">":checkbox:first"</span>).prop(“checked”, <span class="keyword">true</span>);  
-</code></pre><p>在jQuery1.6中，如果使用下面的方法设置checked：<br>``$(“:checkbox”).attr(“checked”, true);  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-striped table-bordered table-hover"</span> <span class="attribute">id</span>=<span class="value">"couponsList"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"checkAll"</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影厅名称<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影厅类型<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>制式<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">th</span>&gt;</span>影票/座位结算价<span class="tag">&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">tbody</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"roomInfo"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">	 $(<span class="string">'#checkAll'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($(<span class="keyword">this</span>).is(<span class="string">':checked'</span>))&#123;</span><br><span class="line">                $(<span class="string">'table input[type="checkbox"]'</span>).prop(<span class="string">'checked'</span>, <span class="string">'true'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                $(<span class="string">'table input[type="checkbox"]'</span>).removeAttr(<span class="string">'checked'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>将不会检查checkbox元素，因为它是需要被设置的property，但是你所有的设置都是初始值。</p>
-<p>然而，曾经jQuery1.6被释放出来的时候，jQuery团队明白当浏览器仅关心页面加载时，设置一些值不是特别的有用。所以，为了保持向后兼容性和.attr()方法的有用性，我们可以继续在jQuery1.6.1中使用.attr()方法取得和设置这些boolean attributes。</p>
-<p>最普通的attributes是checked,selected,disabled和readOnly，但下面是jQuery1.6.1支持的使用.attr()动态地取得和设置boolean attributes/properties的完整列表：</p>
-<p>Js代码  收藏代码</p>
-<pre><code><span class="label">autofocus</span>, autoplay, async, checked, controls, defer, disabled,  
-<span class="label">hidden</span>, loop, <span class="keyword">multiple, </span>open, <span class="preprocessor">readonly</span>, required, scoped, <span class="keyword">selected </span> 
-</code></pre><p>（译者注：大部分都是html5新增的属性）</p>
-<p>还是建议使用.prop()方法来设置这些boolean attributes/properties，即使这些用例没有转换成使用.prop()方法，但是你的代码仍然可以在jQuery1.6.1中正常运行。</p>
-<p>下面是一些attributes和properties的列表，正常情况下，应该使用其对应的方法(见下面的列表)来取得和设置它们。下面的是首用法，但是.attr()方法可以运行在所有的attributes情况下。</p>
-<p>注意：一些DOM元素的properties也被列在下面，但是仅运行在新的.prop()方法中<br><img src="p1.jpg" alt=""></p>
-<p><em>例如: window.location<br>*</em>如果需要在(if needed over) .width()</p>
-<p>.attr()和.prop()都不应该被用来取值/设值。使用.val()方法代替(即使使用.attr(“value”,”somevalue”) 可以继续运行，就像1.6之前做的那样)</p>
-<p>3、首选用法的概述</p>
-<p>.prop()方法应该被用来处理boolean attributes/properties以及在html(比如：window.location)中不存在的properties。其他所有的attributes(在html中你看到的那些)可以而且应该继续使用.attr()方法来进行操作。</p>
-<p>上面的概述已经描述的够清楚了，我也没有必要再总结了。</p>
-<p>转帖地址：<a href="http://hxq0506.iteye.com/blog/1046334" target="_blank" rel="external">http://hxq0506.iteye.com/blog/1046334</a></p>
-);
-</script> 
 
   <article class="post">
   
@@ -668,10 +481,6 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 
 
 
-<script type="text/javascript">
-  // console.log(<p>bootstrap-datetimepicker的demo倒没什么问题，可用在项目里就斯巴达了。<br>在页面没有滚动的时候显示正常，而有了滚动就会错位<img src="p1.png" alt=""><br>看了看代码也没有影响定位的地方啊~ 百度之，果然已经有人搞定了这bug。在place方法里有一处   top = top - containerOffset.top，注释掉就ok了</p>
-);
-</script> 
 
   <article class="post">
   
@@ -711,10 +520,6 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 
 
 
-<script type="text/javascript">
-  // console.log(<p>使cookie失效的方法即设置cookie的过期时间</p>
-);
-</script> 
 
   <article class="post">
   
@@ -722,16 +527,16 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-24T07:07:09.000Z"><a href="/2015/11/24/AWS服务器一年免费使用/">2015-11-24</a></time>
+        <time datetime="2015-11-24T07:07:09.000Z"><a href="/2015/11/24/AWS使用记录/">2015-11-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/11/24/AWS服务器一年免费使用/">AWS使用记录</a></h1>
+    <h1 class="title"><a href="/2015/11/24/AWS使用记录/">AWS使用记录</a></h1>
   
 
     </header>
     <div class="entry" id="entry" data-content="&lt;p&gt;在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。&lt;br&gt;购买成功后，进入后台管理界面。&lt;br&gt;开启一个linux redhat实例。ssh登录失败：&lt;code&gt;It is recommended that your private key files are NOT accessible by others. This private key will be ignored.&lt;/code&gt;&lt;br&gt;原来是私钥的权限问题，&lt;code&gt;chmod 600&lt;/code&gt;后就可以登录了。&lt;br&gt;&lt;a href=&quot;http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;aws的问题排查汇总页面&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++&lt;/p&gt;
+&lt;p&gt;  启动一个red hat实例，我擦什么工具都不带。。。于是在亚马逊云的控制面板stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++&lt;/p&gt;
 ">
       <!-- 空行 -->
       
@@ -741,7 +546,7 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
       
         <p>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。<br>购买成功后，进入后台管理界面。<br>开启一个linux redhat实例。ssh登录失败：<code>It is recommended that your private key files are NOT accessible by others. This private key will be ignored.</code><br>原来是私钥的权限问题，<code>chmod 600</code>后就可以登录了。<br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" target="_blank" rel="external">aws的问题排查汇总页面</a></p>
       
-    <a href='/2015/11/24/AWS服务器一年免费使用/' target="_blank">阅读全部</a> 
+    <a href='/2015/11/24/AWS使用记录/' target="_blank">阅读全部</a> 
     </div>
     <footer>
       
@@ -755,28 +560,44 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 
 
 
-<script type="text/javascript">
-  // console.log(<p>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。<br>购买成功后，进入后台管理界面。<br>开启一个linux redhat实例。ssh登录失败：<code>It is recommended that your private key files are NOT accessible by others. This private key will be ignored.</code><br>原来是私钥的权限问题，<code>chmod 600</code>后就可以登录了。<br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" target="_blank" rel="external">aws的问题排查汇总页面</a></p>
-<p>启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++</p>
-);
-</script> 
 
-  <article class="post">
+  <article class="linux">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-24T07:07:09.000Z"><a href="/2015/11/24/AWS服务器一年免费使用-冲突-酸奶/">2015-11-24</a></time>
+        <time datetime="2015-11-20T09:36:21.000Z"><a href="/2015/11/20/linux压缩和解压缩命令/">2015-11-20</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/11/24/AWS服务器一年免费使用-冲突-酸奶/">AWS使用记录</a></h1>
+    <h1 class="title"><a href="/2015/11/20/linux压缩和解压缩命令/">linux压缩和解压缩命令</a></h1>
   
 
     </header>
-    <div class="entry" id="entry" data-content="&lt;p&gt;在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。&lt;br&gt;购买成功后，进入后台管理界面。&lt;br&gt;开启一个linux redhat实例。ssh登录失败：&lt;code&gt;It is recommended that your private key files are NOT accessible by others. This private key will be ignored.&lt;/code&gt;&lt;br&gt;原来是私钥的权限问题，&lt;code&gt;chmod 600&lt;/code&gt;后就可以登录了。&lt;br&gt;&lt;a href=&quot;http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;aws的问题排查汇总页面&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++&lt;/p&gt;
+    <div class="entry" id="entry" data-content="&lt;p&gt;tar命令&lt;br&gt;　　解包：tar zxvf FileName.tar&lt;br&gt;　　打包：tar czvf FileName.tar DirName&lt;br&gt;gz命令&lt;br&gt;　　解压1：gunzip FileName.gz&lt;br&gt;　　解压2：gzip -d FileName.gz&lt;br&gt;　　压缩：gzip FileName&lt;br&gt;　　.tar.gz 和 .tgz&lt;br&gt;　　解压：tar zxvf FileName.tar.gz&lt;br&gt;　　压缩：tar zcvf FileName.tar.gz DirName&lt;br&gt;   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …&lt;/p&gt;
+&lt;p&gt;bz2命令&lt;/p&gt;
+&lt;p&gt;　　解压1：bzip2 -d FileName.bz2&lt;/p&gt;
+&lt;p&gt;　　解压2：bunzip2 FileName.bz2&lt;/p&gt;
+&lt;p&gt;　　压缩： bzip2 -z FileName&lt;/p&gt;
+&lt;p&gt;　　.tar.bz2&lt;/p&gt;
+&lt;p&gt;　　解压：tar jxvf FileName.tar.bz2&lt;/p&gt;
+&lt;p&gt;　　压缩：tar jcvf FileName.tar.bz2 DirName&lt;/p&gt;
+&lt;p&gt;bz命令&lt;/p&gt;
+&lt;p&gt;　　解压1：bzip2 -d FileName.bz&lt;/p&gt;
+&lt;p&gt;　　解压2：bunzip2 FileName.bz&lt;/p&gt;
+&lt;p&gt;　　压缩：未知&lt;/p&gt;
+&lt;p&gt;　　.tar.bz&lt;/p&gt;
+&lt;p&gt;　　解压：tar jxvf FileName.tar.bz&lt;/p&gt;
+&lt;p&gt;Z命令&lt;/p&gt;
+&lt;p&gt;　　解压：uncompress FileName.Z&lt;/p&gt;
+&lt;p&gt;　　压缩：compress FileName&lt;/p&gt;
+&lt;p&gt;　　.tar.Z&lt;/p&gt;
+&lt;p&gt;　　解压：tar Zxvf FileName.tar.Z&lt;/p&gt;
+&lt;p&gt;　　压缩：tar Zcvf FileName.tar.Z DirName&lt;/p&gt;
+&lt;p&gt;zip命令&lt;/p&gt;
+&lt;p&gt;　　解压：unzip FileName.zip&lt;/p&gt;
+&lt;p&gt;　　压缩：zip FileName.zip DirName&lt;/p&gt;
 ">
       <!-- 空行 -->
       
@@ -784,9 +605,9 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
       
       
       
-        <p>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。<br>购买成功后，进入后台管理界面。<br>开启一个linux redhat实例。ssh登录失败：<code>It is recommended that your private key files are NOT accessible by others. This private key will be ignored.</code><br>原来是私钥的权限问题，<code>chmod 600</code>后就可以登录了。<br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" target="_blank" rel="external">aws的问题排查汇总页面</a></p>
+        <p>tar命令<br>　　解包：tar zxvf FileName.tar<br>　　打包：tar czvf FileName.tar DirName<br>gz命令<br>　　解压1：gunzip FileName.gz<br>　　解压2：gzip -d FileName.gz<br>　　压缩：gzip FileName<br>　　.tar.gz 和 .tgz<br>　　解压：tar zxvf FileName.tar.gz<br>　　压缩：tar zcvf FileName.tar.gz DirName<br>   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …</p>
       
-    <a href='/2015/11/24/AWS服务器一年免费使用-冲突-酸奶/' target="_blank">阅读全部</a> 
+    <a href='/2015/11/20/linux压缩和解压缩命令/' target="_blank">阅读全部</a> 
     </div>
     <footer>
       
@@ -800,11 +621,6 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 
 
 
-<script type="text/javascript">
-  // console.log(<p>在亚马逊云注册新用户即可领取aws一年免费套餐（确切的说，需要付$1）。<br>购买成功后，进入后台管理界面。<br>开启一个linux redhat实例。ssh登录失败：<code>It is recommended that your private key files are NOT accessible by others. This private key will be ignored.</code><br>原来是私钥的权限问题，<code>chmod 600</code>后就可以登录了。<br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html" target="_blank" rel="external">aws的问题排查汇总页面</a></p>
-<p>启动一个red hat实例，我擦什么工具都不带。。。于是stop掉，启动Amazon Linux,依然少很多。最后选择ubuntu，虽然还是少东西，比较来说就他了。gcc、g++需要自己安装，且安装之前要先apt-get update，否则找不到gcc、g++</p>
-);
-</script> 
 
 
 <nav id="pagination">
@@ -821,7 +637,7 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 15px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -847,7 +663,7 @@ $<span class="params">(“input”)</span>.attr<span class="params">(“disabled
   
     <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
-    <li><a href="/tags/linux/">linux</a><small>3</small></li>
+    <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
   

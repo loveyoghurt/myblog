@@ -52,6 +52,59 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-11-19T07:00:39.000Z"><a href="/2015/11/19/转-npm常用命令/">2015-11-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/19/转-npm常用命令/"></a></h1>
+  
+
+    </header>
+    <div class="entry" id="entry" data-content="&lt;p&gt; npm install &lt;name&gt;安装nodejs的依赖包&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt; -g  将包安装到全局环境中&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令&lt;/p&gt;
+&lt;p&gt;npm install &lt;name&gt; –save  安装的同时，将信息写入package.json中&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包&lt;/p&gt;
+&lt;p&gt;这样代码提交到github时，就不用提交node_modules这个文件夹了。&lt;/p&gt;
+&lt;p&gt;npm init  会引导你创建一个package.json文件，包括名称、版本、作者这些信息等&lt;/p&gt;
+&lt;p&gt;npm remove &lt;name&gt;移除&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;npm update &lt;name&gt;更新&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt;npm ls 列出当前安装的了所有包&lt;/p&gt;
+&lt;p&gt;npm root 查看当前包的安装路径&lt;/p&gt;
+&lt;p&gt;npm root -g  查看全局的包的安装路径&lt;/p&gt;
+&lt;p&gt;npm help  帮助，如果要单独查看install命令的帮助，可以使用的npm help install&lt;/p&gt;
+&lt;p&gt;帮助文档：&lt;a href=&quot;https://npmjs.org/doc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://npmjs.org/doc/&lt;/a&gt; &lt;/p&gt;
+">
+      <!-- 空行 -->
+      
+      
+      
+      
+      
+        <p> npm install <name>安装nodejs的依赖包</name></p>
+      
+    <a href='/2015/11/19/转-npm常用命令/' target="_blank">阅读全部</a> 
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-11-05T08:52:08.000Z"><a href="/2015/11/05/github-pages绑定域名/">2015-11-05</a></time>
       
       
@@ -385,100 +438,33 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-15T07:43:38.000Z"><a href="/2015/10/15/忍者/">2015-10-15</a></time>
+        <time datetime="2015-08-25T07:50:10.000Z"><a href="/2015/08/25/hello-world/">2015-08-25</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/10/15/忍者/">忍者</a></h1>
+    <h1 class="title"><a href="/2015/08/25/hello-world/">Hello World</a></h1>
   
 
     </header>
-    <div class="entry" id="entry" data-content="">
+    <div class="entry" id="entry" data-content="&lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick_Start&quot;&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create_a_new_post&quot;&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run_server&quot;&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate_static_files&quot;&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy_to_remote_sites&quot;&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;http://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+">
       <!-- 空行 -->
       
       
       
       
       
-        
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
       
-    <a href='/2015/10/15/忍者/' target="_blank">阅读全部</a> 
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-14T09:10:00.000Z"><a href="/2015/10/14/about3/">2015-10-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/14/about3/">about3</a></h1>
-  
-
-    </header>
-    <div class="entry" id="entry" data-content="">
-      <!-- 空行 -->
-      
-      
-      
-      
-      
-        
-      
-    <a href='/2015/10/14/about3/' target="_blank">阅读全部</a> 
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="_post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-14T09:09:26.000Z"><a href="/2015/10/14/about/">2015-10-14</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/14/about/">about</a></h1>
-  
-
-    </header>
-    <div class="entry" id="entry" data-content="">
-      <!-- 空行 -->
-      
-      
-      
-      
-      
-        
-      
-    <a href='/2015/10/14/about/' target="_blank">阅读全部</a> 
+    <a href='/2015/08/25/hello-world/' target="_blank">阅读全部</a> 
     </div>
     <footer>
       
@@ -499,8 +485,6 @@
     <a href="/" class="alignleft prev">上一页</a>
   
   
-    <a href="/page/3/" class="alignright next">下一页</a>
-  
   <div class="clearfix"></div>
 </nav></div></div>
     <aside id="sidebar" class="alignright">
@@ -510,7 +494,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -539,6 +523,8 @@
     <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   

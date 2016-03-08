@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>backbone | 北京印象</title>
+  <title>北京印象</title>
   <meta name="author" content="monster">
   
-  <meta name="description" content="backbone框架使用">
+  <meta name="description" content="npm install 安装nodejs的依赖包
+例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6
+npm install  -g  将包安装到全局环境中
+但是代码中，直">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="backbone"/>
+  
   <meta property="og:site_name" content="北京印象"/>
 
   
@@ -53,17 +56,31 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-14T07:16:21.000Z"><a href="/2015/10/14/backbone/">2015-10-14</a></time>
+        <time datetime="2015-11-19T07:00:39.000Z"><a href="/2015/11/19/转-npm常用命令/">2015-11-19</a></time>
       
       
   
-    <h1 class="title">backbone</h1>
+    <h1 class="title"></h1>
   
 
     </header>
     <div class="entry" id="entry">
       
-        <p>backbone框架使用</p>
+        <p> npm install <name>安装nodejs的依赖包</name></p>
+<p>例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6</p>
+<p>npm install <name> -g  将包安装到全局环境中</name></p>
+<p>但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令</p>
+<p>npm install <name> –save  安装的同时，将信息写入package.json中</name></p>
+<p>项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包</p>
+<p>这样代码提交到github时，就不用提交node_modules这个文件夹了。</p>
+<p>npm init  会引导你创建一个package.json文件，包括名称、版本、作者这些信息等</p>
+<p>npm remove <name>移除</name></p>
+<p>npm update <name>更新</name></p>
+<p>npm ls 列出当前安装的了所有包</p>
+<p>npm root 查看当前包的安装路径</p>
+<p>npm root -g  查看全局的包的安装路径</p>
+<p>npm help  帮助，如果要单独查看install命令的帮助，可以使用的npm help install</p>
+<p>帮助文档：<a href="https://npmjs.org/doc/" target="_blank" rel="external">https://npmjs.org/doc/</a> </p>
 
       
     </div>
@@ -71,6 +88,11 @@
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/nodejs/">nodejs</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -111,7 +133,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://loveyoghurt.github.com/2015/10/14/backbone/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://loveyoghurt.github.com/2015/11/19/转-npm常用命令/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -124,7 +146,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -153,6 +175,8 @@
     <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   

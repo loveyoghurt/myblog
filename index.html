@@ -62,111 +62,28 @@
     </header>
     <div class="entry" id="entry" data-content="&lt;p&gt;  在这做后台的经历可以说大开眼界，每个项目都能看到不同的插件，光怪陆离不一而足⊙﹏⊙b。现在要说的是ztree，一个树形表单插件。api地址：&lt;a href=&quot;http://www.ztree.me/v3/api.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ztree.me/v3/api.php&lt;/a&gt;&lt;br&gt;  需求是，两个数据相同的树，左边的勾选一条，右边相应的条目要隐藏；反之，取消勾选时，显示出已隐藏的对应条目，如果有父级，则连同父级也显示出来&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;HEAD&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;TITLE&lt;/span&gt;&amp;gt;&lt;/span&gt;zTree树分层显示，分层联动&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;TITLE&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;content-type&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/html; charset=UTF-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../css/demo.css&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../css/zTreeStyle/zTreeStyle.css&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery-1.4.4.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.core.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.excheck.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.exhide.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- &amp;lt;script type=&quot;text/javascript&quot; src=&quot;../../js/jquery.ztree.all-3.4.js&quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;HEAD&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;BODY&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree1&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree1&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;ztree&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;float:left&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree2&quot;&lt;/span&gt;  &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree2&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;ztree&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;float:left&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- &amp;lt;ul id=&quot;tree3&quot;  name=&quot;tree3&quot; class=&quot;ztree&quot; style=&quot;float:left&quot;&amp;gt;&amp;lt;/ul&amp;gt; --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;
-        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; nodes =  [
-                       {name:&lt;span class=&quot;string&quot;&gt;&quot;test1&quot;&lt;/span&gt;, open:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, children:[
-                          {name:&lt;span class=&quot;string&quot;&gt;&quot;test1_1&quot;&lt;/span&gt;}, {name:&lt;span class=&quot;string&quot;&gt;&quot;test1_2&quot;&lt;/span&gt;}]},
-                       {name:&lt;span class=&quot;string&quot;&gt;&quot;test2&quot;&lt;/span&gt;, open:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, children:[
-                          {name:&lt;span class=&quot;string&quot;&gt;&quot;test2_1&quot;&lt;/span&gt;}, {name:&lt;span class=&quot;string&quot;&gt;&quot;test2_2&quot;&lt;/span&gt;}]}
-                       ];
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;head&gt;&lt;br&gt;    &lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;&lt;br&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/zTreeStyle/zTreeStyle.css&quot; type=&quot;text/css&quot;&gt;&lt;br&gt;    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.ztree.core.js&quot;&gt;&lt;/script&gt;&lt;br&gt;    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.ztree.excheck.js&quot;&gt;&lt;/script&gt;&lt;br&gt;    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.ztree.exhide.min.js&quot;&gt;&lt;/script&gt;&lt;br&gt;    &lt;style type=&quot;text/css&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    &lt;span class=&quot;comment&quot;&gt;#tree_0_1{&lt;/span&gt;
+        &lt;span class=&quot;built_in&quot;&gt;float&lt;/span&gt;:left;
+    }
+    &lt;span class=&quot;comment&quot;&gt;#tree_0_2{&lt;/span&gt;
+        &lt;span class=&quot;built_in&quot;&gt;float&lt;/span&gt;:left;
+    }
+&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/head&gt;&lt;/p&gt;
+&lt;body&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;    &lt;div class=&quot;tab-content&quot; style=&quot;border:0px;&quot;&gt;&lt;br&gt;        &lt;div class=&quot;tab-pane active&quot; id=&quot;admin&quot;&gt;&lt;br&gt;            &lt;div style=&quot;margin-top:10px;height:auto&quot;&gt;&lt;br&gt;                &lt;div style=&quot;position:relative;float:left; width:50%&quot;&gt;&lt;br&gt;                    &lt;div&gt;&lt;h2&gt;tree1&lt;/h2&gt;&lt;/div&gt;&lt;br&gt;                    &lt;ul id=&quot;tree_0_1&quot; class=&quot;ztree&quot;&gt;&lt;/ul&gt;&lt;br&gt;                &lt;/div&gt;&lt;br&gt;                &lt;div style=&quot;position:relative;float:left; width:50%&quot;&gt;&lt;br&gt;                    &lt;div&gt;&lt;h2&gt;tree2&lt;/h2&gt;&lt;/div&gt;&lt;br&gt;                    &lt;ul id=&quot;tree_0_2&quot; class=&quot;ztree&quot;&gt;&lt;/ul&gt;&lt;br&gt;                &lt;/div&gt;&lt;br&gt;            &lt;/div&gt;&lt;br&gt;        &lt;/div&gt;&lt;br&gt;    &lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;script type=&quot;text/javascript&quot;&gt;&lt;br&gt;    $(document).ready(function () {&lt;br&gt;        var datal =   [&lt;br&gt;            {name: “父节点1”, open: true, checked: true, children: [&lt;br&gt;                {name: “子节点11”, open: true},&lt;br&gt;                {name: “子节点12”, open: true, children: [{name: “子节点1_2_1”, open: true},{name: “子节点1_2_2”, open: true}]}&lt;br&gt;            ]},&lt;br&gt;            {name: “父节点2”, open: true, children: [&lt;br&gt;                {name: “子节点21”, open: true},&lt;br&gt;                {name: “子节点22”, open: true}&lt;br&gt;            ]}&lt;br&gt;        ];&lt;br&gt;        var datar = [&lt;br&gt;            {name: “父节点1”, open: true, children: [&lt;br&gt;                {name: “子节点11”, open: true},&lt;br&gt;                {name: “子节点12”, open: true, children: [{name: “子节点1_2_1”, open: true},{name: “子节点1_2&lt;em&gt;2”, open: true}]}&lt;br&gt;            ]},&lt;br&gt;            {name: “父节点2”, open: true, children: [&lt;br&gt;                {name: “子节点21”, open: true},&lt;br&gt;                {name: “子节点22”, open: true}&lt;br&gt;            ]}&lt;br&gt;        ];&lt;br&gt;        //获取一个节点所在的tree&lt;br&gt;        function getTree(treeNode) {&lt;br&gt;            var node = treeNode;&lt;br&gt;            while (node.getParentNode()) {&lt;br&gt;                node = node.getParentNode();&lt;br&gt;            }&lt;br&gt;            return node;&lt;br&gt;        }&lt;br&gt;        //左边tree的点选事件处理&lt;br&gt;        function zTreeOnCheck(e, treeId, treeNode) {&lt;br&gt;            var pubTree = $.fn.zTree.getZTreeObj(treeId);//操作的树&lt;br&gt;            var obTree;//联动的树&lt;br&gt;            if(treeId.substring(treeId.lastIndexOf(‘&lt;/em&gt;‘) + 1) == 1){&lt;br&gt;                var obId = treeId.substring(0, treeId.lastIndexOf(‘&lt;em&gt;‘) + 1) + ‘2’;&lt;br&gt;                obTree =  $.fn.zTree.getZTreeObj(obId);&lt;br&gt;            }&lt;br&gt;            else{&lt;br&gt;                var obId = treeId.substring(0, treeId.lastIndexOf(‘&lt;/em&gt;‘) + 1) + ‘1’;&lt;br&gt;                obTree =  $.fn.zTree.getZTreeObj(obId);&lt;br&gt;            }&lt;br&gt;&lt;br&gt;            if (treeNode.checked) {&lt;br&gt;                hideChildren(obTree.getNodeByParam(“name”, treeNode.name), obTree);&lt;br&gt;                hideParents(obTree.getNodeByParam(“name”, treeNode.name), obTree);&lt;br&gt;            }&lt;br&gt;            else {&lt;br&gt;                var node = obTree.getNodeByParam(“name”, treeNode.name);&lt;br&gt;                obTree.showNode(node, obTree);&lt;br&gt;                showChildren(node, obTree);&lt;br&gt;                showParents(node, obTree);&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;        /&lt;strong&gt;&lt;em&gt;
+         &lt;/em&gt; 占用掉一个节点时，检查兄弟结点是否都被占用了，如果是则隐藏父结点&lt;br&gt;         &lt;em&gt; @param node 取消左边check时，右边对应的节点
+         &lt;/em&gt; @param ob 联动的tree&lt;br&gt;         &lt;em&gt;/&lt;br&gt;        function hideParents(node, ob){&lt;br&gt;            if(node.getParentNode()){&lt;br&gt;                var brothers = node.getParentNode().children;&lt;br&gt;                var allHiden = true;&lt;br&gt;                brothers.forEach(function(item){&lt;br&gt;                    if(!item.isHidden){&lt;br&gt;                        allHiden = false;&lt;br&gt;                        return false;&lt;br&gt;                    }&lt;br&gt;                });&lt;br&gt;                if(allHiden){&lt;br&gt;                    ob.hideNode(node.getParentNode());&lt;br&gt;                    hideParents(node.getParentNode(), ob);&lt;br&gt;                }&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;        /&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;         &lt;em&gt; 释放出一个节点时,显示其父节点
+         &lt;/em&gt; @param node 取消左边check时，右边对应的节点&lt;br&gt;         &lt;em&gt; @param ob 联动的tree
+         &lt;/em&gt;/&lt;br&gt;        function showParents(node, ob) {&lt;br&gt;            //寻找当前节点的根节点&lt;br&gt;            while (node.getParentNode() &amp;amp;&amp;amp; node.getParentNode().isHidden == true) {&lt;br&gt;                node = node.getParentNode();&lt;br&gt;                ob.showNode(node);&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;        /&lt;strong&gt;&lt;em&gt;
+         &lt;/em&gt; 要隐藏的节点，其子节点都隐藏&lt;br&gt;         &lt;em&gt; &lt;/em&gt; @param node&lt;br&gt;         &lt;em&gt; &lt;/em&gt; @param ob 联动的tree&lt;br&gt;         &lt;em&gt;/&lt;br&gt;        function hideChildren(node, ob) {&lt;br&gt;            if(!node.checked){&lt;br&gt;                ob.hideNode(node);&lt;br&gt;            }&lt;br&gt;            if (node.children) {&lt;br&gt;                for (var i in node.children) {&lt;br&gt;                    hideChildren(node.children[i], ob);&lt;br&gt;                }&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;        /&lt;/em&gt;&lt;/strong&gt;&lt;br&gt;         &lt;em&gt; 要显示的节点，其子节点都显示
+         &lt;/em&gt; &lt;em&gt; @param node
+         &lt;/em&gt; &lt;em&gt; @param ob 联动的tree
+         &lt;/em&gt;/&lt;br&gt;        function showChildren(node, ob) {&lt;br&gt;            ob.showNode(node);&lt;br&gt;            if (node.children) {&lt;br&gt;                for (var i in node.children) {&lt;br&gt;                    showChildren(node.children[i], ob);&lt;br&gt;                }&lt;br&gt;            }&lt;br&gt;        }&lt;br&gt;&lt;br&gt;        var setting = {&lt;br&gt;            check: {&lt;br&gt;                enable: true,&lt;br&gt;                chkboxType: {“Y”: “ps”, “N”: “ps”}&lt;br&gt;            },&lt;br&gt;            data: {&lt;br&gt;                simpleData: {&lt;br&gt;                    enable: true&lt;br&gt;                }&lt;br&gt;            },&lt;br&gt;            check: {&lt;br&gt;                enable: true,&lt;br&gt;                chkboxType: {“Y”: “ps”, “N”: “ps”}&lt;br&gt;            },&lt;br&gt;            callback: {&lt;br&gt;                onCheck: zTreeOnCheck&lt;br&gt;            }&lt;br&gt;        };&lt;br&gt;&lt;br&gt;        var rtree = $.fn.zTree.init($(‘#tree_0_1’), setting, datal);&lt;br&gt;        var ltree = $.fn.zTree.init($(‘#tree_0_2’), setting, datar);&lt;br&gt;&lt;br&gt;        var arrl = ltree.getCheckedNodes();&lt;br&gt;        arrl.forEach(function(item){&lt;br&gt;            if(!rtree.getNodeByParam(“name”, item.name).checked){&lt;br&gt;                rtree.hideNode(rtree.getNodeByParam(“name”, item.name));&lt;br&gt;            }&lt;br&gt;        });&lt;br&gt;        var arrr = rtree.getCheckedNodes();&lt;br&gt;        arrr.forEach(function(item){&lt;br&gt;            if(!ltree.getNodeByParam(“name”, item.name).checked){&lt;br&gt;                ltree.hideNode(ltree.getNodeByParam(“name”, item.name));&lt;br&gt;            }&lt;br&gt;        });&lt;br&gt;    });&lt;br&gt;&lt;/script&gt;&lt;br&gt;&lt;/body&gt;
 
 
-
-        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; settings = {
-            check: {
-                enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
-                chkboxType: { &lt;span class=&quot;string&quot;&gt;&quot;Y&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;N&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt; }
-            },
-            data: {
-                simpleData: {
-                    enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
-                }
-            },
-            check:{
-                enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
-               &lt;span class=&quot;comment&quot;&gt;// nocheckInherit: false,&lt;/span&gt;
-                chkboxType: { &lt;span class=&quot;string&quot;&gt;&quot;Y&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;N&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt; }
-            },
-            callback: {
-                onCheck: zTreeOnCheck
-            }
-        };
-
-        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;zTreeOnCheck&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e, treeId, treeNode&lt;/span&gt;)&lt;/span&gt;{
-            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree1 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree1&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
-            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree2 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree2&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
-
-            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(treeNode.checked){
-                tree1.hideNode(tree1.getNodeByParam(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;, treeNode.name));
-                &lt;span class=&quot;comment&quot;&gt;// tree1.selectNode(tree1.getNodeByParam(&quot;name&quot;, treeNode.name), true);&lt;/span&gt;
-            }
-            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;{
-                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; node = tree1.getNodeByParam(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;, treeNode.name);
-                tree1.setChkDisabled(node, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);
-                tree1.showNode(node);
-                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; thisNode = node;
-
-                &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(node.getParentNode() &amp;amp;&amp;amp; node.getParentNode().isHidden == &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;){
-                    node = node.getParentNode();
-                }
-                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(thisNode == node){
-                    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;
-                }
-                tree1.showNode(node);
-                checkChildren(node, thisNode);
-                tree1.hideNodes(tree1.getSelectedNodes());
-            }
-        }
-
-        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkChildren&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;node, thisNode&lt;/span&gt;)&lt;/span&gt;{
-            &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(node);
-            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(node.children){
-                &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; node.children){
-                    checkChildren(node.children[i], thisNode);    
-                } 
-            }
-            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;{
-                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree1 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree1&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
-                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(node.name !== thisNode.name){
-                    tree1.hideNode(node);    
-                }
-
-            }
-        }
-
-        $(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
-            $.fn.zTree.init($(&lt;span class=&quot;string&quot;&gt;&quot;#tree1&quot;&lt;/span&gt;), settings, nodes);
-            $.fn.zTree.init($(&lt;span class=&quot;string&quot;&gt;&quot;#tree2&quot;&lt;/span&gt;), settings, nodes);
-
-            &lt;span class=&quot;comment&quot;&gt;// 初始化tree1之前为其绑定点击时的函数为tree1OnClick&lt;/span&gt;
-            &lt;span class=&quot;comment&quot;&gt;// $(&#39;#tree2&#39;).click(function(e){&lt;/span&gt;
-            &lt;span class=&quot;comment&quot;&gt;//     tree1OnClick(e, $(this).attr(&#39;id&#39;), $(this));&lt;/span&gt;
-            &lt;span class=&quot;comment&quot;&gt;// })&lt;/span&gt;
-
-        });
-&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;BODY&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  要注意的是，在用checkNode或者selectNode这里方法时，参数直接传形如{‘name’: ‘test’}的数据不起作用，要用getNodeByParam()获取结点json&lt;/p&gt;
-">
+&lt;p&gt;  要注意的是，在用checkNode或者selectNode这里方法时，参数直接传形如{‘name’: ‘test’}的数据不起作用，要用getNodeByParam()获取结点json&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;/p&gt;">
       <!-- 空行 -->
       
       

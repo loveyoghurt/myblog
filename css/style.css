@@ -16,8 +16,8 @@ body {
   font-family: Microsoft YaHei;
   font-size: 14px;
   text-shadow: 0 0 1px transparent;
-/*background-image url('/imgs/suzhou.jpg') */
-  background-color: #ccc;
+  background-image: url("/imgs/back.png");
+/*background-color #ccc*/
   background-image: no-repeat;
 }
 @media screen and (max-width: 1260px) {
@@ -111,6 +111,7 @@ h2 {
 #header {
   text-shadow: 0 0 1px #fff;
   margin: 0px auto;
+  background-image: url("/imgs/back_header.jpg");
 }
 #header a {
   color: #11507b;
@@ -137,7 +138,7 @@ h2 {
 #header .alignleft {
   height: 200px;
   width: 100%;
-  background: url("../imgs/header.jpg") no-repeat;
+/*background url(../imgs/header.jpg) no-repeat*/
 /*background-repeat no-repeat*/
 }
 #header #main-nav {

@@ -52,6 +52,150 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-03-27T07:41:22.000Z"><a href="/2016/03/27/ztree属性组组件的应用————两个ztree的联动/">2016-03-27</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/27/ztree属性组组件的应用————两个ztree的联动/">ztree属性组组件的应用————两个ztree的联动</a></h1>
+  
+
+    </header>
+    <div class="entry" id="entry" data-content="&lt;p&gt;  在这做后台的经历可以说大开眼界，每个项目都能看到不同的插件，光怪陆离不一而足⊙﹏⊙b。现在要说的是ztree，一个树形表单插件。api地址：&lt;a href=&quot;http://www.ztree.me/v3/api.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ztree.me/v3/api.php&lt;/a&gt;&lt;br&gt;  需求是，两个数据相同的树，左边的勾选一条，右边相应的条目要隐藏；反之，取消勾选时，显示出已隐藏的对应条目，如果有父级，则连同父级也显示出来&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;doctype&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;HEAD&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;TITLE&lt;/span&gt;&amp;gt;&lt;/span&gt;zTree树分层显示，分层联动&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;TITLE&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;content-type&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/html; charset=UTF-8&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../css/demo.css&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../css/zTreeStyle/zTreeStyle.css&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery-1.4.4.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.core.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.excheck.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;../../js/jquery.ztree.exhide.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- &amp;lt;script type=&quot;text/javascript&quot; src=&quot;../../js/jquery.ztree.all-3.4.js&quot;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;HEAD&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;BODY&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree1&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree1&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;ztree&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;float:left&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree2&quot;&lt;/span&gt;  &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;tree2&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;ztree&quot;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;float:left&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- &amp;lt;ul id=&quot;tree3&quot;  name=&quot;tree3&quot; class=&quot;ztree&quot; style=&quot;float:left&quot;&amp;gt;&amp;lt;/ul&amp;gt; --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;
+        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; nodes =  [
+                       {name:&lt;span class=&quot;string&quot;&gt;&quot;test1&quot;&lt;/span&gt;, open:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, children:[
+                          {name:&lt;span class=&quot;string&quot;&gt;&quot;test1_1&quot;&lt;/span&gt;}, {name:&lt;span class=&quot;string&quot;&gt;&quot;test1_2&quot;&lt;/span&gt;}]},
+                       {name:&lt;span class=&quot;string&quot;&gt;&quot;test2&quot;&lt;/span&gt;, open:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, children:[
+                          {name:&lt;span class=&quot;string&quot;&gt;&quot;test2_1&quot;&lt;/span&gt;}, {name:&lt;span class=&quot;string&quot;&gt;&quot;test2_2&quot;&lt;/span&gt;}]}
+                       ];
+
+
+
+        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; settings = {
+            check: {
+                enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+                chkboxType: { &lt;span class=&quot;string&quot;&gt;&quot;Y&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;N&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt; }
+            },
+            data: {
+                simpleData: {
+                    enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;
+                }
+            },
+            check:{
+                enable: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,
+               &lt;span class=&quot;comment&quot;&gt;// nocheckInherit: false,&lt;/span&gt;
+                chkboxType: { &lt;span class=&quot;string&quot;&gt;&quot;Y&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;N&quot;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&quot;ps&quot;&lt;/span&gt; }
+            },
+            callback: {
+                onCheck: zTreeOnCheck
+            }
+        };
+
+        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;zTreeOnCheck&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e, treeId, treeNode&lt;/span&gt;)&lt;/span&gt;{
+            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree1 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree1&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
+            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree2 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree2&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
+
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(treeNode.checked){
+                tree1.hideNode(tree1.getNodeByParam(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;, treeNode.name));
+                &lt;span class=&quot;comment&quot;&gt;// tree1.selectNode(tree1.getNodeByParam(&quot;name&quot;, treeNode.name), true);&lt;/span&gt;
+            }
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;{
+                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; node = tree1.getNodeByParam(&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;, treeNode.name);
+                tree1.setChkDisabled(node, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;);
+                tree1.showNode(node);
+                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; thisNode = node;
+
+                &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(node.getParentNode() &amp;amp;&amp;amp; node.getParentNode().isHidden == &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;){
+                    node = node.getParentNode();
+                }
+                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(thisNode == node){
+                    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;;
+                }
+                tree1.showNode(node);
+                checkChildren(node, thisNode);
+                tree1.hideNodes(tree1.getSelectedNodes());
+            }
+        }
+
+        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkChildren&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;node, thisNode&lt;/span&gt;)&lt;/span&gt;{
+            &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(node);
+            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(node.children){
+                &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; node.children){
+                    checkChildren(node.children[i], thisNode);    
+                } 
+            }
+            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;{
+                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; tree1 = $.fn.zTree.getZTreeObj(&lt;span class=&quot;string&quot;&gt;&quot;tree1&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//tree2的ul的id&lt;/span&gt;
+                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(node.name !== thisNode.name){
+                    tree1.hideNode(node);    
+                }
+
+            }
+        }
+
+        $(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{
+            $.fn.zTree.init($(&lt;span class=&quot;string&quot;&gt;&quot;#tree1&quot;&lt;/span&gt;), settings, nodes);
+            $.fn.zTree.init($(&lt;span class=&quot;string&quot;&gt;&quot;#tree2&quot;&lt;/span&gt;), settings, nodes);
+
+            &lt;span class=&quot;comment&quot;&gt;// 初始化tree1之前为其绑定点击时的函数为tree1OnClick&lt;/span&gt;
+            &lt;span class=&quot;comment&quot;&gt;// $(&#39;#tree2&#39;).click(function(e){&lt;/span&gt;
+            &lt;span class=&quot;comment&quot;&gt;//     tree1OnClick(e, $(this).attr(&#39;id&#39;), $(this));&lt;/span&gt;
+            &lt;span class=&quot;comment&quot;&gt;// })&lt;/span&gt;
+
+        });
+&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;BODY&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;HTML&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  要注意的是，在用checkNode或者selectNode这里方法时，参数直接传形如{‘name’: ‘test’}的数据不起作用，要用getNodeByParam()获取结点json&lt;/p&gt;
+">
+      <!-- 空行 -->
+      
+      
+      
+      
+      
+        <p>  在这做后台的经历可以说大开眼界，每个项目都能看到不同的插件，光怪陆离不一而足⊙﹏⊙b。现在要说的是ztree，一个树形表单插件。api地址：<a href="http://www.ztree.me/v3/api.php" target="_blank" rel="external">http://www.ztree.me/v3/api.php</a><br>  需求是，两个数据相同的树，左边的勾选一条，右边相应的条目要隐藏；反之，取消勾选时，显示出已隐藏的对应条目，如果有父级，则连同父级也显示出来</p>
+      
+    <a href='/2016/03/27/ztree属性组组件的应用————两个ztree的联动/' target="_blank">阅读全部</a> 
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-02-16T08:47:16.000Z"><a href="/2016/02/16/哈利波特大战卢克·天行者/">2016-02-16</a></time>
       
       
@@ -288,14 +432,19 @@ $.validator.addMethod(&lt;span class=&quot;string&quot;&gt;&quot;compareDate&quo
         }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  这样当开始时间大于结束时间时，就会显示错误提示了。&lt;/p&gt;
-&lt;h3 id=&quot;·坑&quot;&gt;&lt;strong&gt;·坑&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;  曾经在对一个表单的验证，弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样必然能正确校验所有元素。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？&lt;br&gt;    打开源码，赫然发现validate()方法里：&lt;/p&gt;
+&lt;h3 id=&quot;···&quot;&gt;&lt;strong&gt;···&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;  曾经在对一个表单的验证，形如这样的写法&lt;code&gt;$(&amp;#39;#form&amp;#39;).validate(args)&lt;/code&gt;弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样应该能执行所有的校验规则。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？&lt;br&gt;    查看源码，赫然发现validate()方法里：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;//&lt;span class=&quot;instruction&quot;&gt; check &lt;/span&gt;if a validator for this form was already created
   var validator =&lt;span class=&quot;function&quot;&gt; $.data(&lt;/span&gt; this&lt;span class=&quot;keyword&quot;&gt;[&lt;/span&gt;0], &lt;span class=&quot;string&quot;&gt;&quot;validator&quot;&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;)&lt;/span&gt;;
  &lt;span class=&quot;instruction&quot;&gt; if &lt;/span&gt;( validator &lt;span class=&quot;function&quot;&gt;)&lt;/span&gt; {
      &lt;span class=&quot;instruction&quot;&gt; return &lt;/span&gt;validator;
   }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 如果某个jquery对象上的validator已存在，则不再接受新的创建！fuck this&lt;br&gt;  所以$(‘#form’).validate(args)只能写一次，写在要验证的DOM创建完成之后&lt;/p&gt;
-">
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 所以科学的写法是&lt;code&gt;var validator = $(&amp;#39;#form&amp;#39;).validate(args)&lt;/code&gt;， 在需要执行校验的地方：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(!validator.form&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;)&lt;/span&gt;{
+      return;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  在加入新的须校验元素时：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$(&lt;/span&gt;ele).rules(&lt;span class=&quot;string&quot;&gt;&#39;add&#39;&lt;/span&gt;, { &lt;span class=&quot;symbol&quot;&gt;required:&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;});
+&lt;/code&gt;&lt;/pre&gt;">
       <!-- 空行 -->
       
       
@@ -562,67 +711,6 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
 
 
 
-  <article class="linux">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-20T09:36:21.000Z"><a href="/2015/11/20/linux压缩和解压缩命令/">2015-11-20</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/20/linux压缩和解压缩命令/">linux压缩和解压缩命令</a></h1>
-  
-
-    </header>
-    <div class="entry" id="entry" data-content="&lt;p&gt;tar命令&lt;br&gt;　　解包：tar zxvf FileName.tar&lt;br&gt;　　打包：tar czvf FileName.tar DirName&lt;br&gt;gz命令&lt;br&gt;　　解压1：gunzip FileName.gz&lt;br&gt;　　解压2：gzip -d FileName.gz&lt;br&gt;　　压缩：gzip FileName&lt;br&gt;　　.tar.gz 和 .tgz&lt;br&gt;　　解压：tar zxvf FileName.tar.gz&lt;br&gt;　　压缩：tar zcvf FileName.tar.gz DirName&lt;br&gt;   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …&lt;/p&gt;
-&lt;p&gt;bz2命令&lt;/p&gt;
-&lt;p&gt;　　解压1：bzip2 -d FileName.bz2&lt;/p&gt;
-&lt;p&gt;　　解压2：bunzip2 FileName.bz2&lt;/p&gt;
-&lt;p&gt;　　压缩： bzip2 -z FileName&lt;/p&gt;
-&lt;p&gt;　　.tar.bz2&lt;/p&gt;
-&lt;p&gt;　　解压：tar jxvf FileName.tar.bz2&lt;/p&gt;
-&lt;p&gt;　　压缩：tar jcvf FileName.tar.bz2 DirName&lt;/p&gt;
-&lt;p&gt;bz命令&lt;/p&gt;
-&lt;p&gt;　　解压1：bzip2 -d FileName.bz&lt;/p&gt;
-&lt;p&gt;　　解压2：bunzip2 FileName.bz&lt;/p&gt;
-&lt;p&gt;　　压缩：未知&lt;/p&gt;
-&lt;p&gt;　　.tar.bz&lt;/p&gt;
-&lt;p&gt;　　解压：tar jxvf FileName.tar.bz&lt;/p&gt;
-&lt;p&gt;Z命令&lt;/p&gt;
-&lt;p&gt;　　解压：uncompress FileName.Z&lt;/p&gt;
-&lt;p&gt;　　压缩：compress FileName&lt;/p&gt;
-&lt;p&gt;　　.tar.Z&lt;/p&gt;
-&lt;p&gt;　　解压：tar Zxvf FileName.tar.Z&lt;/p&gt;
-&lt;p&gt;　　压缩：tar Zcvf FileName.tar.Z DirName&lt;/p&gt;
-&lt;p&gt;zip命令&lt;/p&gt;
-&lt;p&gt;　　解压：unzip FileName.zip&lt;/p&gt;
-&lt;p&gt;　　压缩：zip FileName.zip DirName&lt;/p&gt;
-">
-      <!-- 空行 -->
-      
-      
-      
-      
-      
-        <p>tar命令<br>　　解包：tar zxvf FileName.tar<br>　　打包：tar czvf FileName.tar DirName<br>gz命令<br>　　解压1：gunzip FileName.gz<br>　　解压2：gzip -d FileName.gz<br>　　压缩：gzip FileName<br>　　.tar.gz 和 .tgz<br>　　解压：tar zxvf FileName.tar.gz<br>　　压缩：tar zcvf FileName.tar.gz DirName<br>   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …</p>
-      
-    <a href='/2015/11/20/linux压缩和解压缩命令/' target="_blank">阅读全部</a> 
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -638,7 +726,7 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/ztree/" style="font-size: 10px;">ztree</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -664,17 +752,19 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
   
     <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
+    <li><a href="/tags/jquery插件/">jquery插件</a><small>1</small></li>
+  
     <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
-  
-    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
     <li><a href="/tags/position/">position</a><small>1</small></li>
   
     <li><a href="/tags/webstorm/">webstorm</a><small>1</small></li>
+  
+    <li><a href="/tags/ztree/">ztree</a><small>1</small></li>
   
     <li><a href="/tags/域名/">域名</a><small>1</small></li>
   
@@ -690,6 +780,10 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
   <ul class="entry">
     
       <li>
+        <a href="/2016/03/27/ztree属性组组件的应用————两个ztree的联动/">ztree属性组组件的应用————两个ztree的联动</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/16/哈利波特大战卢克·天行者/">哈利波特大战卢克·天行者</a>
       </li>
     
@@ -703,10 +797,6 @@ $&lt;span class=&quot;params&quot;&gt;(“input”)&lt;/span&gt;.attr&lt;span cl
     
       <li>
         <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate花样使用技巧</a>
-      </li>
-    
-      <li>
-        <a href="/2016/01/29/ssh连接github失败/">ssh连接github失败</a>
       </li>
     
   </ul>

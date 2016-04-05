@@ -46,35 +46,43 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+  <article class="linux">
   
   <div class="post-content">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-19T07:00:39.000Z"><a href="/2015/11/19/转-npm常用命令/">2015-11-19</a></time>
+        <time datetime="2015-11-20T09:36:21.000Z"><a href="/2015/11/20/linux压缩和解压缩命令/">2015-11-20</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/11/19/转-npm常用命令/"></a></h1>
+    <h1 class="title"><a href="/2015/11/20/linux压缩和解压缩命令/">linux压缩和解压缩命令</a></h1>
   
 
     </header>
-    <div class="entry" id="entry" data-content="&lt;p&gt; npm install &lt;name&gt;安装nodejs的依赖包&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;例如npm install express 就会默认安装express的最新版本，也可以通过在后面加版本号的方式安装指定版本，如npm install express@3.0.6&lt;/p&gt;
-&lt;p&gt;npm install &lt;name&gt; -g  将包安装到全局环境中&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;但是代码中，直接通过require()的方式是没有办法调用全局安装的包的。全局的安装是供命令行使用的，就好像全局安装了vmarket后，就可以在命令行中直接运行vm命令&lt;/p&gt;
-&lt;p&gt;npm install &lt;name&gt; –save  安装的同时，将信息写入package.json中&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;项目路径中如果有package.json文件时，直接使用npm install方法就可以根据dependencies配置安装所有的依赖包&lt;/p&gt;
-&lt;p&gt;这样代码提交到github时，就不用提交node_modules这个文件夹了。&lt;/p&gt;
-&lt;p&gt;npm init  会引导你创建一个package.json文件，包括名称、版本、作者这些信息等&lt;/p&gt;
-&lt;p&gt;npm remove &lt;name&gt;移除&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;npm update &lt;name&gt;更新&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt;npm ls 列出当前安装的了所有包&lt;/p&gt;
-&lt;p&gt;npm root 查看当前包的安装路径&lt;/p&gt;
-&lt;p&gt;npm root -g  查看全局的包的安装路径&lt;/p&gt;
-&lt;p&gt;npm help  帮助，如果要单独查看install命令的帮助，可以使用的npm help install&lt;/p&gt;
-&lt;p&gt;帮助文档：&lt;a href=&quot;https://npmjs.org/doc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://npmjs.org/doc/&lt;/a&gt; &lt;/p&gt;
+    <div class="entry" id="entry" data-content="&lt;p&gt;tar命令&lt;br&gt;　　解包：tar zxvf FileName.tar&lt;br&gt;　　打包：tar czvf FileName.tar DirName&lt;br&gt;gz命令&lt;br&gt;　　解压1：gunzip FileName.gz&lt;br&gt;　　解压2：gzip -d FileName.gz&lt;br&gt;　　压缩：gzip FileName&lt;br&gt;　　.tar.gz 和 .tgz&lt;br&gt;　　解压：tar zxvf FileName.tar.gz&lt;br&gt;　　压缩：tar zcvf FileName.tar.gz DirName&lt;br&gt;   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …&lt;/p&gt;
+&lt;p&gt;bz2命令&lt;/p&gt;
+&lt;p&gt;　　解压1：bzip2 -d FileName.bz2&lt;/p&gt;
+&lt;p&gt;　　解压2：bunzip2 FileName.bz2&lt;/p&gt;
+&lt;p&gt;　　压缩： bzip2 -z FileName&lt;/p&gt;
+&lt;p&gt;　　.tar.bz2&lt;/p&gt;
+&lt;p&gt;　　解压：tar jxvf FileName.tar.bz2&lt;/p&gt;
+&lt;p&gt;　　压缩：tar jcvf FileName.tar.bz2 DirName&lt;/p&gt;
+&lt;p&gt;bz命令&lt;/p&gt;
+&lt;p&gt;　　解压1：bzip2 -d FileName.bz&lt;/p&gt;
+&lt;p&gt;　　解压2：bunzip2 FileName.bz&lt;/p&gt;
+&lt;p&gt;　　压缩：未知&lt;/p&gt;
+&lt;p&gt;　　.tar.bz&lt;/p&gt;
+&lt;p&gt;　　解压：tar jxvf FileName.tar.bz&lt;/p&gt;
+&lt;p&gt;Z命令&lt;/p&gt;
+&lt;p&gt;　　解压：uncompress FileName.Z&lt;/p&gt;
+&lt;p&gt;　　压缩：compress FileName&lt;/p&gt;
+&lt;p&gt;　　.tar.Z&lt;/p&gt;
+&lt;p&gt;　　解压：tar Zxvf FileName.tar.Z&lt;/p&gt;
+&lt;p&gt;　　压缩：tar Zcvf FileName.tar.Z DirName&lt;/p&gt;
+&lt;p&gt;zip命令&lt;/p&gt;
+&lt;p&gt;　　解压：unzip FileName.zip&lt;/p&gt;
+&lt;p&gt;　　压缩：zip FileName.zip DirName&lt;/p&gt;
 ">
       <!-- 空行 -->
       
@@ -82,9 +90,9 @@
       
       
       
-        <p> npm install <name>安装nodejs的依赖包</name></p>
+        <p>tar命令<br>　　解包：tar zxvf FileName.tar<br>　　打包：tar czvf FileName.tar DirName<br>gz命令<br>　　解压1：gunzip FileName.gz<br>　　解压2：gzip -d FileName.gz<br>　　压缩：gzip FileName<br>　　.tar.gz 和 .tgz<br>　　解压：tar zxvf FileName.tar.gz<br>　　压缩：tar zcvf FileName.tar.gz DirName<br>   压缩多个文件：tar zcvf FileName.tar.gz DirName1 DirName2 DirName3 …</p>
       
-    <a href='/2015/11/19/转-npm常用命令/' target="_blank">阅读全部</a> 
+    <a href='/2015/11/20/linux压缩和解压缩命令/' target="_blank">阅读全部</a> 
     </div>
     <footer>
       
@@ -494,7 +502,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/ztree/" style="font-size: 10px;">ztree</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -520,17 +528,19 @@
   
     <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
+    <li><a href="/tags/jquery插件/">jquery插件</a><small>1</small></li>
+  
     <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
-  
-    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
     <li><a href="/tags/position/">position</a><small>1</small></li>
   
     <li><a href="/tags/webstorm/">webstorm</a><small>1</small></li>
+  
+    <li><a href="/tags/ztree/">ztree</a><small>1</small></li>
   
     <li><a href="/tags/域名/">域名</a><small>1</small></li>
   
@@ -546,6 +556,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2016/03/27/ztree属性组组件的应用————两个ztree的联动/">ztree属性组组件的应用————两个ztree的联动</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/16/哈利波特大战卢克·天行者/">哈利波特大战卢克·天行者</a>
       </li>
     
@@ -559,10 +573,6 @@
     
       <li>
         <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate花样使用技巧</a>
-      </li>
-    
-      <li>
-        <a href="/2016/01/29/ssh连接github失败/">ssh连接github失败</a>
       </li>
     
   </ul>

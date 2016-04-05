@@ -117,14 +117,19 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
         }
 }
 </code></pre><p>  这样当开始时间大于结束时间时，就会显示错误提示了。</p>
-<h3 id="·坑"><strong>·坑</strong></h3><p>  曾经在对一个表单的验证，弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样必然能正确校验所有元素。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？<br>    打开源码，赫然发现validate()方法里：</p>
+<h3 id="···"><strong>···</strong></h3><p>  曾经在对一个表单的验证，形如这样的写法<code>$(&#39;#form&#39;).validate(args)</code>弱弱的先后写了两个地方，想当然的认为后写的会覆盖先写的，这样应该能执行所有的校验规则。结果bug真的来了，预想的规则没有生效。debug看下，第一次执行validate的时候dom还没添加完，看样子是先执行的覆盖了后执行的？<br>    查看源码，赫然发现validate()方法里：</p>
 <pre><code>//<span class="instruction"> check </span>if a validator for this form was already created
   var validator =<span class="function"> $.data(</span> this<span class="keyword">[</span>0], <span class="string">"validator"</span> <span class="function">)</span>;
  <span class="instruction"> if </span>( validator <span class="function">)</span> {
      <span class="instruction"> return </span>validator;
   }
-</code></pre><p> 如果某个jquery对象上的validator已存在，则不再接受新的创建！fuck this<br>  所以$(‘#form’).validate(args)只能写一次，写在要验证的DOM创建完成之后</p>
-
+</code></pre><p> 所以科学的写法是<code>var validator = $(&#39;#form&#39;).validate(args)</code>， 在需要执行校验的地方：</p>
+<pre><code><span class="keyword">if</span><span class="params">(!validator.form<span class="params">()</span>)</span>{
+      return;
+ }
+</code></pre><p>  在加入新的须校验元素时：</p>
+<pre><code><span class="variable">$(</span>ele).rules(<span class="string">'add'</span>, { <span class="symbol">required:</span> <span class="keyword">true</span>});
+</code></pre>
       
     </div>
     <footer>
@@ -189,7 +194,7 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
+    <a href="/tags/async-js加载/" style="font-size: 10px;">-async -js加载</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/funny/" style="font-size: 10px;">funny</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jquery/" style="font-size: 20px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/position/" style="font-size: 10px;">position</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/ztree/" style="font-size: 10px;">ztree</a> <a href="/tags/域名/" style="font-size: 10px;">域名</a> <a href="/tags/视频制作/" style="font-size: 10px;">视频制作</a>
   </div>
 </div>
 
@@ -215,17 +220,19 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
   
     <li><a href="/tags/jquery/">jquery</a><small>2</small></li>
   
+    <li><a href="/tags/jquery插件/">jquery插件</a><small>1</small></li>
+  
     <li><a href="/tags/linux/">linux</a><small>2</small></li>
   
     <li><a href="/tags/markdown/">markdown</a><small>1</small></li>
-  
-    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
     <li><a href="/tags/position/">position</a><small>1</small></li>
   
     <li><a href="/tags/webstorm/">webstorm</a><small>1</small></li>
+  
+    <li><a href="/tags/ztree/">ztree</a><small>1</small></li>
   
     <li><a href="/tags/域名/">域名</a><small>1</small></li>
   
@@ -241,6 +248,10 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
   <ul class="entry">
     
       <li>
+        <a href="/2016/03/27/ztree属性组组件的应用————两个ztree的联动/">ztree属性组组件的应用————两个ztree的联动</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/16/哈利波特大战卢克·天行者/">哈利波特大战卢克·天行者</a>
       </li>
     
@@ -254,10 +265,6 @@ $.validator.addMethod(<span class="string">"compareDate"</span>,<span class="fun
     
       <li>
         <a href="/2016/02/03/jquery-validate验证不定个数输入框及其它技巧/">jquery.validate花样使用技巧</a>
-      </li>
-    
-      <li>
-        <a href="/2016/01/29/ssh连接github失败/">ssh连接github失败</a>
       </li>
     
   </ul>
